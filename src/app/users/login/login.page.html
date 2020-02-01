@@ -1,0 +1,41 @@
+<ion-content fullscreen>
+  <div class="bg-image no-scroll">
+    <ion-grid>
+      <ion-row justify-content-center align-items-center>
+        <ion-col size-md="6" size-lg="4" size-xl="2">
+          <img src="../assets/images/log_in_title.png" />
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid style="margin-top: 3%;">
+      <ion-row justify-content-center align-items-center>
+        <ion-col size-lg="6" size-md="8" size-xl="3">
+          <div class="base-view">
+            <div class="login-view" >
+              <div padding>
+              <ion-label class="lable-font" position="stacked">{{appLables.EMAIL}}<ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="email"  class="input-field" [(ngModel)]="email" placeholder="Email"></ion-input>
+              </div>
+              <div padding>
+                <ion-label class="lable-font" position="stacked">{{appLables.PASSWORD}}<ion-text color="danger">*</ion-text>
+                </ion-label>
+                <ion-input required type="password"  class="input-field-pass" [(ngModel)]="password" placeholder="******"></ion-input>
+                <!-- <a href="#" class="forgotpassword" style="margin-top: 10px;">{{appLabels.FORGOT_PASSWORD}}</a> -->
+              </div>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid style="margin-top: 3%;">
+      <ion-row justify-content-center align-items-center>
+        <ion-col size-md="5" size-xl="2" size-lg="3">
+          <ion-button expand="block" fill="clear" class="btn-block" (click)="login()">
+            <img src="../assets/images/next.png" />
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

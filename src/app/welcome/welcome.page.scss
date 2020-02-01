@@ -1,0 +1,17 @@
+.bg-image {
+    background: url('../../assets/images/background_green.png');
+    background-size: cover;
+    min-height: 100vh;
+  }
+  
+  .no-scroll .scroll-content {
+    overflow: hidden;
+  }
+  .btn-block {
+    height: auto;
+  }
+  
+  .slider {
+    height: 100% !important;
+    width: -webkit-fill-available;
+  }

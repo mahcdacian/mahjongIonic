@@ -1,14 +1,45 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content fullscreen>
+  <zxing-scanner (scanSuccess)="scanCompleteHandler($event)" (scanSuccess)="onCodeScanResult($event)" *ngIf="showScanner; else showHomeOptions"></zxing-scanner>
+  <ng-template #showHomeOptions>
+    <div class="bg-image no-scroll">
+      <ion-grid>
+        <ion-row justify-content-center align-items-center class="scanicon">
+          <ion-col size-md="6" size-xl="3" size-lg="6">
+            <img src="../assets/images/scan_icon.png" style="height: 200px;" />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row justify-content-center align-items-center>
+          <ion-col size-md="6" size-xl="3" size-lg="6">
+            <ion-button expand="block" fill="clear" class="btn-block" (click)="showQRScanner()">
+              <img src="../assets/images/scan_qr_btn.png" />
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row justify-content-center align-items-center>
+          <ion-col size-md="6" size-xl="3" size-lg="6">
+            <!-- <img src="../assets/images/enter_qr_code.png" />  -->
+            <div class="qrinput-btn" size-lg="6" size-md="4" size-xl="2" padding>
+              <ion-input required type="text" class="input-field-qr" placeholder="Or Enter Code"></ion-input>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row justify-content-center align-items-center>
+          <ion-col size-md="6" size-xl="3" size-lg="6">
+            <ion-button expand="block" fill="clear" class="btn-block">
+              <img src="../assets/images/top_player.png" />
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row justify-content-center align-items-center>
+          <ion-col size-md="6" size-xl="3" size-lg="6">
+            <ion-button expand="block" fill="clear" class="btn-block">
+              <img src="../assets/images/score_btn.png" />
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ng-template>
 </ion-content>

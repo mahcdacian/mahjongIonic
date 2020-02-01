@@ -1,0 +1,44 @@
+<ion-slides pager="true" [options]="slideOpts" class="slider">
+  <ion-slide>
+    <h1>Slide 1</h1>
+  </ion-slide>
+  <ion-slide>
+    <ion-content>
+      <div class="bg-image no-scroll">
+        <ion-grid>
+          <ion-row align-items-center justify-content-center>
+            <ion-col size-md="6" size-lg="4" size-xl="3">
+              <img src="../assets/images/loading_page.png" />
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid>
+          <ion-row justify-content-center align-items-center>
+            <ion-col size-md="6" size-xl="3" size-lg="4">
+              <ion-button expand="block" fill="clear" class="btn-block" routerLink="/users/register">
+                <img src="../assets/images/sign_up.png" />
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row justify-content-center align-items-center>
+            <ion-col size-md="6" size-xl="3" size-lg="4">
+              <ion-button expand="block" fill="clear" class="btn-block" routerLink="/users/login">
+                <img src="../assets/images/log_in.png" />
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row justify-content-center align-items-center>
+            <ion-col size-md="6" size-xl="3" size-lg="4">
+              <ion-button expand="block" fill="clear" class="btn-block" routerLink='/home'>
+                <img src="../assets/images/playguide.png" />
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-content >
+  </ion-slide>
+  <ion-slide>
+    <h1>Slide 3</h1>
+  </ion-slide>
+</ion-slides>
