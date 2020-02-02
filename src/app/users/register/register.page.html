@@ -38,23 +38,19 @@
                       [ngModelOptions]="{standalone: true}"></ion-input>
                   </div>
                   <div padding class=" form-group">
-                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.EMAIL)}}<ion-text color="danger">*
-                      </ion-text>
+                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.EMAIL)}}
                     </ion-label>
                     <ion-input required type="email" class="input-field" [(ngModel)]="userDetails.email"
                       [ngModelOptions]="{standalone: true}"></ion-input>
                   </div>
                   <div padding class=" form-group">
-                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.ADDRESS)}}<ion-text color="danger">*
-                      </ion-text>
+                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.ADDRESS)}}
                     </ion-label>
                     <ion-textarea rows="6" cols="20" class="input-field" [(ngModel)]="userDetails.address"
                       [ngModelOptions]="{standalone: true}"></ion-textarea>
                   </div>
                   <div padding class=" form-group">
-                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.MOBILE_NUMBER)}}<ion-text
-                        color="danger">*
-                      </ion-text>
+                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.MOBILE_NUMBER)}}
                     </ion-label>
                     <ion-input required type="number" class="input-field" [(ngModel)]="userDetails.mobileNumber"
                       [ngModelOptions]="{standalone: true}"></ion-input>

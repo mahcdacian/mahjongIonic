@@ -96,19 +96,19 @@ export class RegisterPage implements OnInit {
       return false;
     }
     this.validateEmail();
-    if (!this.userDetails.address || this.userDetails.address === '') {
+  /*   if (!this.userDetails.address || this.userDetails.address === '') {
       this.errorMessage = ERROR_MESSAGE.ERR_ADDRESS_REQUIRED;
       return false;
-    }
-    if (this.userDetails.address.toString().length >= 151) {
+    } */
+    if (this.userDetails.address&&  this.userDetails.address.toString().length >= 151) {
       this.errorMessage = ERROR_MESSAGE.ERR_ADDRESS_LENGTH_EXCEEDS;
       return false;
     }
-    if (!this.userDetails.mobileNumber) {
+   /*  if (!this.userDetails.mobileNumber) {
       this.errorMessage = ERROR_MESSAGE.ERR_MOBILENUMBER_REQUIRED;
       return false;
-    }
-    if (!(this.userDetails.mobileNumber.toString().length <= 12 && this.userDetails.mobileNumber.toString().length >= 10)) {
+    } */
+    if (this.userDetails.mobileNumber && !(this.userDetails.mobileNumber.toString().length <= 12 && this.userDetails.mobileNumber.toString().length >= 10)) {
       this.errorMessage = ERROR_MESSAGE.ERR_MOBILENUMBER_REQUIRED;
       return false;
     }
