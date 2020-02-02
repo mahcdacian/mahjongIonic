@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AppService } from '../../shared/app.service';
-import { UserInformation } from '../../shared/user.model';
+import { UserInformation, MESSAGE_TYPE } from '../../shared/app.model';
 import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { APP_LABELS } from '../../shared/app.labels';
@@ -32,7 +32,7 @@ export class RegisterPage implements OnInit {
 
   constructor(
     private afAuth: AngularFireAuth,
-    private appService: AppService,
+    public appService: AppService,
     private router: Router,
     private afStore: AngularFirestore
   ) { }
@@ -41,7 +41,7 @@ export class RegisterPage implements OnInit {
 
   switchToTermsAndConditionView(): void {
     if (!this.validate()) {
-      this.appService.presentToast(this.errorMessage, 'danger');
+      this.appService.presentToast(this.appService.getAppMessage(this.errorMessage, MESSAGE_TYPE.ERROR), 'danger');
       return;
     }
     this.showTermsAndConditionView = true;
@@ -60,7 +60,8 @@ export class RegisterPage implements OnInit {
           this.userDetails
         );
         res.user.sendEmailVerification().then(() => {
-          this.appService.presentToast(SUCCESS_MESSAGE.SUCSS_REGISTER_SUCCESSFUL, 'success');
+          this.appService.presentToast(this.appService.getAppMessage(SUCCESS_MESSAGE.SUCSS_REGISTER_SUCCESSFUL, MESSAGE_TYPE.SUCCESS),
+            'success');
           this.router.navigate(['/users/login']);
         });
       }
@@ -107,7 +108,7 @@ export class RegisterPage implements OnInit {
       this.errorMessage = ERROR_MESSAGE.ERR_MOBILENUMBER_REQUIRED;
       return false;
     }
-    if (!(this.userDetails.mobileNumber.toString().length <= 12  && this.userDetails.mobileNumber.toString().length >= 10)) {
+    if (!(this.userDetails.mobileNumber.toString().length <= 12 && this.userDetails.mobileNumber.toString().length >= 10)) {
       this.errorMessage = ERROR_MESSAGE.ERR_MOBILENUMBER_REQUIRED;
       return false;
     }

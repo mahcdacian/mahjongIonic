@@ -6,3 +6,14 @@ export interface UserInformation {
     mobileNumber: number;
     email: string;
 }
+
+export enum SELECTED_APP_LANGUAGE {
+    ENGLISH,
+    CHINESE
+}
+
+export enum MESSAGE_TYPE {
+    ERROR,
+    SUCCESS,
+    INFORMATION
+}

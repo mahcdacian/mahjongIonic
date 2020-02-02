@@ -24,35 +24,35 @@
               <div class="login-view">
                 <form>
                   <div padding class="form-group">
-                    <ion-label class="lable-font" position="stacked">{{appLabels.FIRST_NAME}}<ion-text color="danger">*
+                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.FIRST_NAME)}}<ion-text color="danger">*
                       </ion-text>
                     </ion-label>
                     <ion-input required type="text" class="input-field" [(ngModel)]="userDetails.firstName"
                       [ngModelOptions]="{standalone: true}"></ion-input>
                   </div>
                   <div padding class=" form-group">
-                    <ion-label class="lable-font" position="stacked">{{appLabels.LAST_NAME}}<ion-text color="danger">*
+                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.LAST_NAME)}}<ion-text color="danger">*
                       </ion-text>
                     </ion-label>
                     <ion-input required type="text" class="input-field" [(ngModel)]="userDetails.lastName"
                       [ngModelOptions]="{standalone: true}"></ion-input>
                   </div>
                   <div padding class=" form-group">
-                    <ion-label class="lable-font" position="stacked">{{appLabels.EMAIL}}<ion-text color="danger">*
+                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.EMAIL)}}<ion-text color="danger">*
                       </ion-text>
                     </ion-label>
                     <ion-input required type="email" class="input-field" [(ngModel)]="userDetails.email"
                       [ngModelOptions]="{standalone: true}"></ion-input>
                   </div>
                   <div padding class=" form-group">
-                    <ion-label class="lable-font" position="stacked">{{appLabels.ADDRESS}}<ion-text color="danger">*
+                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.ADDRESS)}}<ion-text color="danger">*
                       </ion-text>
                     </ion-label>
                     <ion-textarea rows="6" cols="20" class="input-field" [(ngModel)]="userDetails.address"
                       [ngModelOptions]="{standalone: true}"></ion-textarea>
                   </div>
                   <div padding class=" form-group">
-                    <ion-label class="lable-font" position="stacked">{{appLabels.MOBILE_NUMBER}}<ion-text
+                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.MOBILE_NUMBER)}}<ion-text
                         color="danger">*
                       </ion-text>
                     </ion-label>
@@ -60,14 +60,14 @@
                       [ngModelOptions]="{standalone: true}"></ion-input>
                   </div>
                   <div padding class=" form-group">
-                    <ion-label class="lable-font" position="stacked">{{appLabels.PASSWORD}}<ion-text color="danger">*
+                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.PASSWORD)}}<ion-text color="danger">*
                       </ion-text>
                     </ion-label>
                     <ion-input required type="password" class="input-field" [(ngModel)]="password"
                       [ngModelOptions]="{standalone: true}"></ion-input>
                   </div>
                   <div padding class=" form-group">
-                    <ion-label class="lable-font" position="stacked">{{appLabels.CONFIRM_PASSWORD}}<ion-text
+                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.CONFIRM_PASSWORD)}}<ion-text
                         color="danger">
                         *</ion-text>
                     </ion-label>

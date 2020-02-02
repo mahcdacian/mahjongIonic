@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AppService } from '../../shared/app.service';
-import { UserInformation } from '../../shared/user.model';
+import { UserInformation, MESSAGE_TYPE } from '../../shared/app.model';
 import { Router } from '@angular/router';
 import { SUCCESS_MESSAGE } from 'src/app/shared/message.strings';
 import { APP_LABELS } from '../../shared/app.labels';
@@ -29,11 +29,11 @@ export class LoginPage implements OnInit {
 
   constructor(
     private afAuth: AngularFireAuth,
-    private appService: AppService,
+    public appService: AppService,
     private router: Router
     ) { }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
 
 
@@ -49,10 +49,10 @@ export class LoginPage implements OnInit {
           this.userDetails.email = email;
           this.appService.authState = res.user;
           this.appService.setUser(this.userDetails);
-          this.appService.presentToast(SUCCESS_MESSAGE.SUCC_REGISTER_LOGIN, 'success');
+          this.appService.presentToast(this.appService.getAppMessage(SUCCESS_MESSAGE.SUCC_REGISTER_LOGIN, MESSAGE_TYPE.SUCCESS), 'success');
           this.router.navigate(['/home']);
         } else {
-          this.appService.presentToast(ERROR_MESSAGE.ERR_EMAIL_NOT_VERIFIED, 'danger');
+          this.appService.presentToast(this.appService.getAppMessage(ERROR_MESSAGE.ERR_EMAIL_NOT_VERIFIED, MESSAGE_TYPE.ERROR), 'danger');
         }
       }
     } catch (err) {
