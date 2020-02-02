@@ -12,7 +12,8 @@ export enum ERROR_MESSAGE  {
     ERR_PASSWORD_REQUIRED = 'Password is required',
     ERR_PASSWORD_NOTMATCH = 'Password and Confirm Password field doesnot match',
     ERR_USER_NOT_LOGGED = 'User is not logged in',
-    ERR_EMAIL_NOT_VERIFIED = 'Please validate your email address. Kindly check your email inbox'
+    ERR_EMAIL_NOT_VERIFIED = 'Please validate your email address. Kindly check your email inbox',
+    ERR_ACCEPT_TERMS_AND_CONDITION = 'You need to accept the terms and condition to continue registration'
 }
 export enum SUCCESS_MESSAGE {
     SUCSS_REGISTER_SUCCESSFUL = 'Registration successful.Please check your email for account activation',

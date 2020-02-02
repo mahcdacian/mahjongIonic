@@ -38,9 +38,11 @@ export class LoginPage implements OnInit {
 
 
   async login() {
+    this.appService.showLoader.next(true);
     const { email, password } = this;
     try {
       const res = await this.afAuth.auth.signInWithEmailAndPassword(email, password);
+      this.appService.showLoader.next(false);
       if (res.user) {
         if (res.user && res.user.emailVerified) {
           this.userDetails.id = res.user.uid;
@@ -54,6 +56,7 @@ export class LoginPage implements OnInit {
         }
       }
     } catch (err) {
+      this.appService.showLoader.next(false);
       console.dir(err);
       // if(err.code && err.code == 'auth/user-not-found') {
       this.appService.presentToast(err.message, 'danger');

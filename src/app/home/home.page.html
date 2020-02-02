@@ -1,5 +1,11 @@
 <ion-content fullscreen>
-  <zxing-scanner (scanSuccess)="scanCompleteHandler($event)" (scanSuccess)="onCodeScanResult($event)" *ngIf="showScanner; else showHomeOptions"></zxing-scanner>
+  <div *ngIf="showScanner; else showHomeOptions" class="no-scroll">
+    <div class="back-button back-btn-alignment">
+      <ion-img [src]="'../assets/images/back_button.png'" (click)="showScanner = false"></ion-img>
+    </div>
+    <zxing-scanner (scanSuccess)="scanCompleteHandler($event)" (scanSuccess)="onCodeScanResult($event)">
+    </zxing-scanner>
+  </div>
   <ng-template #showHomeOptions>
     <div class="bg-image no-scroll">
       <ion-grid>

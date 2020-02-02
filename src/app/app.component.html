@@ -1,3 +1,13 @@
 <ion-app class='tbody'>
+  <div class="loader-background" *ngIf="showLoader"></div>
+  <div class="loading-icon" justify-content-center align-items-center  *ngIf="showLoader">
+    <ion-grid style="height: inherit;">
+      <ion-row justify-content-center align-items-center class="scanicon" style="height: 100%;">
+        <ion-col>
+          <ion-img [src]="'../assets/images/loader.svg'" style="height: 13vh;"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>

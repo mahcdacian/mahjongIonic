@@ -13,7 +13,7 @@ import { ERROR_MESSAGE, SUCCESS_MESSAGE } from '../../shared/message.strings';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-
+  showTermsAndConditionView = false;
   userDetails: UserInformation = {
     firstName: '',
     lastName: '',
@@ -39,15 +39,21 @@ export class RegisterPage implements OnInit {
 
   ngOnInit() { }
 
-  async register() {
+  switchToTermsAndConditionView(): void {
     if (!this.validate()) {
       this.appService.presentToast(this.errorMessage, 'danger');
       return;
     }
+    this.showTermsAndConditionView = true;
+  }
+
+  async register() {
+    this.appService.showLoader.next(true);
     this.email = this.userDetails.email;
     const { email, password, confirmPassword } = this;
     try {
       const res = await this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+      this.appService.showLoader.next(false);
       if (res.user) {
         this.userDetails.id = res.user.uid;
         this.afStore.doc(`registerUsersData/${res.user.uid}`).set(
@@ -59,6 +65,7 @@ export class RegisterPage implements OnInit {
         });
       }
     } catch (err) {
+      this.appService.showLoader.next(false);
       console.dir(err);
       // if(err.code && err.code == 'auth/user-not-found') {
       this.appService.presentToast(err.message, 'danger');

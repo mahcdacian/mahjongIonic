@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { UserInformation } from './user.model';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,8 @@ import { UserInformation } from './user.model';
 export class AppService {
   user: UserInformation;
   authState = null;
+  showLoader = new Subject<boolean>();
+
   constructor(private toastController: ToastController) { }
 
   setUser(user: UserInformation) {

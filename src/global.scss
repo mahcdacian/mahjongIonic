@@ -24,3 +24,17 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+.back-button {
+    width: 40px;
+    height: 40px;
+}
+
+@media screen and (min-width: 1025px) {
+
+    /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+    .web-hide {
+        display: none !important;
+    }
+
+}

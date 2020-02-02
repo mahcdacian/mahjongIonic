@@ -1,9 +1,18 @@
 <ion-content fullscreen>
   <div class="bg-image no-scroll">
-    <ion-grid>
+    <ion-grid style="padding-bottom: unset;" class="web-hide">
+      <ion-row>
+        <ion-col style="padding-bottom: unset;">
+          <div class="back-button">
+            <ion-img [src]="'../assets/images/back_button.png'" routerLink='/welcome'></ion-img>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid style="padding-top: unset;">
       <ion-row justify-content-center align-items-center>
         <ion-col size-md="6" size-lg="4" size-xl="2">
-          <img src="../assets/images/log_in_title.png" />
+          <ion-img [src]="'../assets/images/log_in_title.png'"></ion-img>
         </ion-col>
       </ion-row>
     </ion-grid>
