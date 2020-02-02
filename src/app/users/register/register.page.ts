@@ -108,7 +108,8 @@ export class RegisterPage implements OnInit {
       this.errorMessage = ERROR_MESSAGE.ERR_MOBILENUMBER_REQUIRED;
       return false;
     } */
-    if (this.userDetails.mobileNumber && !(this.userDetails.mobileNumber.toString().length <= 12 && this.userDetails.mobileNumber.toString().length >= 10)) {
+    if (this.userDetails.mobileNumber &&
+      !(this.userDetails.mobileNumber.toString().length <= 12 && this.userDetails.mobileNumber.toString().length >= 10)) {
       this.errorMessage = ERROR_MESSAGE.ERR_MOBILENUMBER_REQUIRED;
       return false;
     }

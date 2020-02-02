@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { UserInformation, SELECTED_APP_LANGUAGE, MESSAGE_TYPE } from './app.model';
 import { Subject } from 'rxjs';
-import { ENGLISH_STRING, CHINESE_STRING,ENGLISHCHINESE_STRING } from './message.strings';
+import { ENGLISH_STRING, CHINESE_STRING, ENGLISH_CHINESE_STRING } from './message.strings';
 import { APP_LABELS_CH, APP_LABELS_EN , APP_LABELS_EN_CH} from './app.labels';
 
 @Injectable({
@@ -16,7 +16,7 @@ export class AppService {
   selectedAppLanguage: SELECTED_APP_LANGUAGE;
 
   constructor(private toastController: ToastController) {
-    this.selectedAppLanguage = SELECTED_APP_LANGUAGE.ENGLISHCHINESE;
+    this.selectedAppLanguage = SELECTED_APP_LANGUAGE.ENGLISH_CHINESE;
   }
 
   setUser(user: UserInformation) {
@@ -57,11 +57,11 @@ export class AppService {
       } else {
         return CHINESE_STRING.SUCCESS_MESSAGE_CH[message];
       }
-    }else if (this.selectedAppLanguage === SELECTED_APP_LANGUAGE.ENGLISHCHINESE) {
+    } else if (this.selectedAppLanguage === SELECTED_APP_LANGUAGE.ENGLISH_CHINESE) {
       if (messageType === MESSAGE_TYPE.ERROR) {
-        return ENGLISHCHINESE_STRING.ERROR_MESSAGE_EN[message];
+        return ENGLISH_CHINESE_STRING.ERROR_MESSAGE_EN_CH[message];
       } else {
-        return ENGLISHCHINESE_STRING.SUCCESS_MESSAGE_EN[message];
+        return ENGLISH_CHINESE_STRING.SUCCESS_MESSAGE_EN_CH[message];
       }
     }
   }
@@ -70,7 +70,7 @@ export class AppService {
       return APP_LABELS_EN[label];
     } else if (this.selectedAppLanguage === SELECTED_APP_LANGUAGE.CHINESE) {
       return APP_LABELS_CH[label];
-    }else if (this.selectedAppLanguage === SELECTED_APP_LANGUAGE.ENGLISHCHINESE) {
+    } else if (this.selectedAppLanguage === SELECTED_APP_LANGUAGE.ENGLISH_CHINESE) {
       return APP_LABELS_EN_CH[label];
     }
   }

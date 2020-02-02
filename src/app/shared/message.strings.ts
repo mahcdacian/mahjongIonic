@@ -27,8 +27,8 @@ export const CHINESE_STRING = {
     SUCCESS_MESSAGE_CH: {}
 };
 
-export const ENGLISHCHINESE_STRING = {
-    ERROR_MESSAGE_EN: {
+export const ENGLISH_CHINESE_STRING = {
+    ERROR_MESSAGE_EN_CH: {
         ERR_FIRSTNAME_REQUIRED: 'First name is required',
         ERR_FIRSTNAME_LENGTH_EXCEEDS: 'First name length should not exceed 15 characters',
         ERR_LASTNAME_REQUIRED: 'Last name is required',
@@ -45,7 +45,7 @@ export const ENGLISHCHINESE_STRING = {
         ERR_EMAIL_NOT_VERIFIED: 'Please validate your email address. Kindly check your email inbox',
         ERR_ACCEPT_TERMS_AND_CONDITION: 'You need to accept the terms and condition to continue registration'
     },
-    SUCCESS_MESSAGE_EN: {
+    SUCCESS_MESSAGE_EN_CH: {
         SUCSS_REGISTER_SUCCESSFUL: 'Registration successful.Please check your email for account activation',
         SUCC_REGISTER_LOGIN: 'Welcome, User logged in successful'
     }

@@ -10,7 +10,7 @@ export interface UserInformation {
 export enum SELECTED_APP_LANGUAGE {
     ENGLISH,
     CHINESE,
-    ENGLISHCHINESE
+    ENGLISH_CHINESE
 }
 
 export enum MESSAGE_TYPE {
