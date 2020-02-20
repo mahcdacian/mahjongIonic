@@ -1,0 +1,105 @@
+<ion-content fullscreen>
+  <div class="bg-image no-scroll">
+    <ion-grid style="padding-bottom: unset;">
+      <ion-row class="scanicon" justify-content-center align-items-center>
+        <ion-col class="img-align">
+          <div class="image-container">
+            <div class="vlt-img">
+              <img src="../assets/images/vlt.png" style="height: 50px;" />
+            </div>
+            <div class="soy-img">
+              <img src="../assets/images/soy.png" style="height: 50px;" />
+            </div>
+            <div class="ct-img">
+              <img src="../assets/images/ct.png" style="height: 50px;" />
+            </div>
+            <div class="malt-img">
+              <img src="../assets/images/malt.png" style="height: 50px;" />
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid style="padding-top: unset;text-align: center;">
+      <ion-row justify-content-center align-items-center>
+        <ion-col size-md="5" size-lg="5" size-sm="9" size-xl="3">
+          <div class="top-title" style="text-align: -webkit-center;">
+            <ion-img [src]="'../assets/images/top_play_title.png'" style="width: 85%;"></ion-img>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid style="padding-top: unset;">
+      <ion-row justify-content-center align-items-center>
+        <ion-col size-md="6" size-lg="6" size-xl="4">
+          <ion-grid>
+            <ion-row align-items-center justify-content-center>
+              <div class="player-details">
+                <ng-container *ngFor="let user of topUsers">
+                  <div style="display: flex;" class="card-align">
+                    <div class="player-info" style="width: 10%;">
+                      <div class="player-card" style="text-align: -webkit-center;">
+                        <div class="serialNo">{{user.ranking}}</div>
+                      </div>
+                    </div>
+                    <div class="player-info" style="margin-left: 1%;">
+                      <div class="player-card" style="padding-left: 5px;">
+                        <ion-grid>
+                          <ion-row class="ion-justify-content-start">
+                            <ion-col size="6">
+                              <div class="serialNo" style="width: 50%;">{{user.name}}</div>
+                            </ion-col>
+                            <ion-col size="6">
+                              <div class="serialNo" style="width: 50%;float: right;">{{user.score}}</div>
+                            </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
+              <div class="board">
+                <ion-img [src]="'../assets/images/green_board.png'"></ion-img>
+              </div>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid style="margin-top: 3%;">
+      <ion-row justify-content-center align-items-center>
+        <ion-col size-md="6" size-lg="6" size-xl="4">
+          <ion-grid>
+            <ion-row align-items-center justify-content-center>
+              <div class="player-details">
+                <div style="display: flex;" class="card-align">
+                  <div class="own-info" style="max-width: fit-content;">
+                    <div class="player-card" style="text-align: -webkit-center;">
+                      <div class="serialNo" style="padding: 0px 5px 0px 5px;min-width: 30px;">
+                        {{currentUserRank}}</div>
+                    </div>
+                  </div>
+                  <div class="own-info" style="margin-left: 1%;">
+                    <div class="player-card" style="padding-left: 5px;">
+                      <ion-grid>
+                        <ion-row class="ion-justify-content-start">
+                          <ion-col size="6">
+                            <div class="serialNo" style="width: 50%;">{{currentUserName}}</div>
+                          </ion-col>
+                          <ion-col size="6">
+                            <div class="serialNo" style="width: 50%;float: right;">{{currentUserScore}}</div>
+                          </ion-col>
+                        </ion-row>
+                      </ion-grid>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

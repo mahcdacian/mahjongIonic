@@ -24,14 +24,16 @@
               <div class="login-view">
                 <form>
                   <div padding class="form-group">
-                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.FIRST_NAME)}}<ion-text color="danger">*
+                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.FIRST_NAME)}}
+                      <ion-text color="danger">*
                       </ion-text>
                     </ion-label>
                     <ion-input required type="text" class="input-field" [(ngModel)]="userDetails.firstName"
                       [ngModelOptions]="{standalone: true}"></ion-input>
                   </div>
                   <div padding class=" form-group">
-                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.LAST_NAME)}}<ion-text color="danger">*
+                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.LAST_NAME)}}
+                      <ion-text color="danger">*
                       </ion-text>
                     </ion-label>
                     <ion-input required type="text" class="input-field" [(ngModel)]="userDetails.lastName"
@@ -42,29 +44,40 @@
                     </ion-label>
                     <ion-input required type="email" class="input-field" [(ngModel)]="userDetails.email"
                       [ngModelOptions]="{standalone: true}"></ion-input>
+                    <p class="info-text">
+                      <ion-text color="danger">*
+                      </ion-text>Please ensure email address is valid as winners will be contacted primarily via email.
+                      勝出者將會收到電郵通知，請確保電郵地址正確
+                    </p>
                   </div>
-                  <div padding class=" form-group">
+                  <div padding class=" form-group" style="padding-top: unset;">
                     <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.ADDRESS)}}
                     </ion-label>
                     <ion-textarea rows="6" cols="20" class="input-field" [(ngModel)]="userDetails.address"
                       [ngModelOptions]="{standalone: true}"></ion-textarea>
                   </div>
                   <div padding class=" form-group">
-                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.MOBILE_NUMBER)}}
+                    <ion-label class="lable-font" position="stacked">
+                      {{appService.getAppLabels(appLabels.MOBILE_NUMBER)}}
                     </ion-label>
                     <ion-input required type="number" class="input-field" [(ngModel)]="userDetails.mobileNumber"
                       [ngModelOptions]="{standalone: true}"></ion-input>
+                      <p class="info-text">
+                        <ion-text color="danger">*
+                        </ion-text>*Winners will be contacted both via email and SMS if they have provided mobile number in this form. 勝出者如有填寫手機號碼，屆時將會收到電郵及短信通知得獎。
+                      </p>
                   </div>
-                  <div padding class=" form-group">
-                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.PASSWORD)}}<ion-text color="danger">*
+                  <div padding class=" form-group" style="padding-top: unset;">
+                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.PASSWORD)}}
+                      <ion-text color="danger">*
                       </ion-text>
                     </ion-label>
                     <ion-input required type="password" class="input-field" [(ngModel)]="password"
                       [ngModelOptions]="{standalone: true}"></ion-input>
                   </div>
                   <div padding class=" form-group">
-                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.CONFIRM_PASSWORD)}}<ion-text
-                        color="danger">
+                    <ion-label class="lable-font" position="stacked">
+                      {{appService.getAppLabels(appLabels.CONFIRM_PASSWORD)}}<ion-text color="danger">
                         *</ion-text>
                     </ion-label>
                     <ion-input required type="password" class="input-field" [(ngModel)]="confirmPassword"

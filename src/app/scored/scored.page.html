@@ -1,0 +1,78 @@
+<ion-content fullscreen>
+  <div *ngIf="showScanner; else showHomeOptions" class="no-scroll">
+    <div class="back-button back-btn-alignment">
+      <ion-img [src]="'../assets/images/back_button.png'" (click)="showScanner = false"></ion-img>
+    </div>
+    <zxing-scanner (scanSuccess)="scanCompleteHandler($event)" (scanSuccess)="onCodeScanResult($event)">
+    </zxing-scanner>
+  </div>
+  <ng-template #showHomeOptions>
+    <div class="bg-image no-scroll" *ngIf="loadScorePage; else showAnimation">
+      <ion-grid  style="padding-bottom: unset;">
+        <ion-row class="scanicon" justify-content-center align-items-center>
+          <ion-col class="img-align">
+            <div class="image-container">
+              <div class="vlt-img">
+                <img src="../assets/images/vlt.png" style="height: 50px;" />
+              </div>
+              <div class="soy-img">
+                <img src="../assets/images/soy.png" style="height: 50px;" />
+              </div>
+              <div class="ct-img">
+                <img src="../assets/images/ct.png" style="height: 50px;" />
+              </div>
+              <div class="malt-img">
+                <img src="../assets/images/malt.png" style="height: 50px;" />
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid style="padding-top: unset;">
+        <ion-row justify-content-center align-items-center>
+          <ion-col size-md="6" size-lg="6" size-xl="4">
+            <div class="cardImage" padding>
+              <ion-img [src]="appService.score.scannedScore.cardUrl"></ion-img>
+            </div>
+            <div class="score-value">
+              <ion-grid>
+                <ion-row align-items-center justify-content-center>
+                  <ion-col size-md="9" size-sm="10" size-lg="9" size-xl="9">
+                    {{ counter }}
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+            <div class="scored" padding>
+              <ion-grid>
+                <ion-row align-items-center justify-content-center>
+                  <ion-col size-md="9" size-sm="10" size-lg="9" size-xl="9">
+                    <ion-img [src]="'../assets/images/score_board.png'"></ion-img>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+            <div class="board">
+              <ion-img [src]="'../assets/images/green_board.png'"></ion-img>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid style="padding-top: unset;">
+        <ion-row justify-content-center align-items-center>
+          <ion-col size-md="6" size-xl="4" size-lg="6">
+            <div class="row-img">
+            <ion-img [src]="'../assets/images/my_score.png'" class="img-btn"></ion-img>
+            <ion-img [src]="'../assets/images/top_player_score.png'" class="img-btn" (click)="showTopPlayer()"></ion-img>
+            <ion-img [src]="'../assets/images/new_scan.png'" class="img-btn" (click)="showScanner = true;"></ion-img>
+          </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <ng-template #showAnimation>
+      <video class="video-container" [src]="appService.score.scannedScore.cardVideoUrl" (ended)="vidEnded()" id="videoUrl" autoplay></video>
+    </ng-template>
+  </ng-template>
+
+</ion-content>

@@ -1,0 +1,211 @@
+.bg-image {
+  background: url('../../assets/images/scan_back.png');
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.no-scroll .scroll-content {
+  overflow: hidden;
+}
+
+.scanicon {
+  text-align: center;
+}
+
+:host zxing-scanner::ng-deep video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+}
+
+
+zxing-scanner:before {
+  position: absolute;
+  content: "";
+  height: 300px;
+  width: 300px;
+  border: 5px solid lightsteelblue;
+  border-radius: 15%;
+  opacity: 0.5;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.back-btn-alignment {
+  position: absolute;
+  z-index: 10;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+.vlt-img {
+  transform: skewX(7deg);
+  height: 80px;
+}
+
+.soy-img {
+  transform: skewX(-6deg);
+  height: 80px;
+  padding-top: 15px;
+}
+
+.malt-img {
+  transform: skewX(-2deg);
+  height: 80px;
+  padding-top: 15px;
+}
+
+.ct-img {
+  transform: skewX(3deg);
+  height: 80px;
+}
+
+.image-container {
+  display: inline-flex;
+}
+
+.img-btn {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Clear floats after image containers */
+.row-img::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.scored {
+  position: absolute;
+  top: 42%;
+}
+
+.img-align {
+  text-align: end;
+}
+
+.score-value {
+  position: absolute;
+  top: 73%;
+  font-size: 30px;
+  font-weight: 500;
+  z-index: 10;
+  left: 36%;
+  width: 100%
+}
+
+@media screen and (min-width: 460px) {
+
+  /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+
+  .score-value {
+    top: 72%;
+    font-size: 40px;
+    left: 34%;
+  }
+}
+
+@media screen and (min-width: 460px) {
+
+  /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+
+  .score-value {
+    top: 72%;
+    font-size: 35px;
+    left: 38%;
+  }
+}
+
+@media screen and (min-width: 579px) {
+
+  /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+  .img-align {
+    margin-left: 62%;
+  }
+
+  .score-value {
+    top: 68%;
+    font-size: 35px;
+    left: 32%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+  .img-align {
+    margin-left: -52%;
+  }
+
+  .score-value {
+    top: 66%;
+    font-size: 23px;
+    left: 28%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+
+  /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+  .img-align {
+    margin-left: -52%;
+  }
+
+  .score-value {
+    top: 66%;
+    font-size: 30px;
+    left: 28%;
+  }
+}
+
+@media screen and (min-width: 1140px) {
+
+  /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+  .img-align {
+    margin-left: -68%;
+  }
+
+
+  .score-value {
+    top: 66%;
+    font-size: 30px;
+    left: 28%;
+  }
+}
+
+@media screen and (min-width: 1870px) {
+
+  .score-value {
+    top: 65%;
+    font-size: 40px;
+    left: 28%;
+  }
+}
+.video-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: hidden;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  object-fit: fill;
+  overflow: hidden;
+}
+.cardImage {
+  position: absolute;
+  top: 11%;
+  padding-left: 25px;
+  padding-right: 25px;
+}

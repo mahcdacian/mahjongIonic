@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ToastController } from '@ionic/angular';
-import { UserInformation, SELECTED_APP_LANGUAGE, MESSAGE_TYPE } from './app.model';
+import { UserInformation, SELECTED_APP_LANGUAGE, MESSAGE_TYPE, ScoreCard } from './app.model';
 import { Subject } from 'rxjs';
 import { ENGLISH_STRING, CHINESE_STRING, ENGLISH_CHINESE_STRING } from './message.strings';
 import { APP_LABELS_CH, APP_LABELS_EN , APP_LABELS_EN_CH} from './app.labels';
@@ -14,6 +14,7 @@ export class AppService {
   authState = null;
   showLoader = new Subject<boolean>();
   selectedAppLanguage: SELECTED_APP_LANGUAGE;
+  score: ScoreCard;
 
   constructor(private toastController: ToastController) {
     this.selectedAppLanguage = SELECTED_APP_LANGUAGE.ENGLISH_CHINESE;

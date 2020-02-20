@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { IonicModule } from '@ionic/angular';
-import { HomePageRoutingModule } from './home-routing.module';
-import { HomePage } from './home.page';
-import { ZXingScannerModule } from '@zxing/ngx-scanner';
+
+import { ScoreboardPageRoutingModule } from './scoreboard-routing.module';
+
+import { ScoreboardPage } from './scoreboard.page';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -12,10 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
-    ZXingScannerModule,
+    ScoreboardPageRoutingModule,
     HttpClientModule
   ],
-  declarations: [HomePage]
+  declarations: [ScoreboardPage]
 })
-export class HomePageModule {}
+export class ScoreboardPageModule {}

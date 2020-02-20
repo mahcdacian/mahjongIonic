@@ -1,0 +1,151 @@
+.bg-image {
+    background: url('../../assets/images/scan_back.png');
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.no-scroll .scroll-content {
+    overflow: hidden;
+}
+
+.btn-block {
+    height: auto;
+}
+
+.scanicon {
+    text-align: center;
+}
+
+.back-btn-alignment {
+    position: absolute;
+    z-index: 10;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.vlt-img {
+    transform: skewX(7deg);
+    height: 80px;
+}
+
+.soy-img {
+    transform: skewX(-6deg);
+    height: 80px;
+    padding-top: 15px;
+}
+
+.malt-img {
+    transform: skewX(-2deg);
+    height: 80px;
+    padding-top: 15px;
+}
+
+.ct-img {
+    transform: skewX(3deg);
+    height: 80px;
+}
+
+.image-container {
+    display: inline-flex;
+}
+
+.img-align {
+    text-align: end;
+}
+
+.player-info {
+    box-shadow: 0px 10px 0px 0px #F7921C;
+    border-radius: 3px;
+    margin-bottom: 5%;
+    width: -webkit-fill-available;
+}
+
+.player-card {
+       background-color: #EBE6E2;
+       height: 30px;
+       box-shadow: inset 0px -7px 0px 0px #EBE6E2;
+       border-radius: 3px;
+}
+
+.own-info {
+    box-shadow: 0px 10px 0px 0px green;
+    border-radius: 3px;
+    margin-bottom: 5%;
+    width: -webkit-fill-available;
+}
+
+.player-details {
+    position: absolute;
+    z-index: 10;
+    width: 80%;
+    top: 25%;
+}
+
+@media screen and (min-width: 386px) {
+
+    /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+    .img-align {
+        margin-left: 62%;
+    }
+
+    .player-card {
+        height: 35px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+    .img-align {
+        margin-left: -52%;
+    }
+
+    .player-details {
+        top: 25%;
+    }
+
+    .player-card {
+        height: 35px;
+    }
+}
+
+@media screen and (min-width: 960px) {
+
+    /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+    .img-align {
+        margin-left: -52%;
+    }
+
+    .player-card {
+     height: 40px;   
+    }
+}
+
+@media screen and (min-width: 1140px) {
+
+    /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+    .img-align {
+        margin-left: -68%;
+    }
+}
+
+.top-title {
+    position: absolute;
+    z-index: 10;
+    top: 1%;
+}
+
+.serialNo {
+  display: table-cell;
+  vertical-align: middle;
+  height: inherit;
+}
+
+
+@media screen and (min-width: 360px) {
+
+    /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+    .card-align {
+        margin-bottom: 1%;
+    }
+}

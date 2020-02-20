@@ -1,18 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AppService } from '../shared/app.service';
-import { HttpClient } from '@angular/common/http';
+import { timer } from 'rxjs';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+  selector: 'app-scored',
+  templateUrl: './scored.page.html',
+  styleUrls: ['./scored.page.scss'],
 })
-export class HomePage implements OnInit {
+export class ScoredPage implements OnInit, AfterViewInit {
   showScanner = false;
-  constructor(private appService: AppService, private httpClient: HttpClient, private router: Router) { }
-
+  loadScorePage = false;
+  constructor(public appService: AppService, private router: Router, private httpClient: HttpClient) { }
+  counter;
+  interval;
   ngOnInit() {
+    this.counter = this.appService.score.previousScore;
+  }
+
+  ngAfterViewInit() {
   }
 
   onCodeScanResult(code: any) {
@@ -26,7 +33,7 @@ export class HomePage implements OnInit {
   scanCompleteHandler(event: any) {
     this.appService.showLoader.next(true);
     this.showScanner = false;
-    this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/scanQRScodeApi?qrcode=x50y342u').subscribe(
+    this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/scanQRScodeApi?qrcode=' + event).subscribe(
       (res) => {
         if (res) {
           /* tslint:disable:no-string-literal */
@@ -43,10 +50,28 @@ export class HomePage implements OnInit {
           };
           /* tslint:enable:no-string-literal */
         }
-        this.router.navigate(['/scored']);
+        this.loadScorePage = false;
         this.appService.showLoader.next(false);
       },
       (error) => { this.appService.presentToast(error, 'danger'); this.appService.showLoader.next(false); }
     );
+  }
+
+  vidEnded(): void {
+    this.loadScorePage = true;
+    this.interval = setInterval(() => {
+      if (this.counter <=
+        this.appService.score.totalScore) {
+        this.counter++;
+      }
+    }, 1);
+    if (this.counter === this.appService.score.totalScore) {
+      clearInterval(this.interval);
+    }
+  }
+
+  showTopPlayer(): void {
+    this.router.navigate(['/scoreboard']);
+    this.appService.showLoader.next(true);
   }
 }

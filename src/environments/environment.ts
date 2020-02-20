@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   firebaseConfig: {
   // add config and remove it before promoting code same goes with environment.ts
-  }
+ 
+}
 };
 
 /*

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from './guard/auth-guard';
+import { NavigateGuard } from './guard/navigate.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
   {
     path: 'users/login',
     loadChildren: () => import('./users/login/login.module').then( m => m.LoginPageModule),
+    canActivate: [NavigateGuard]
   },
   {
     path: 'users/register',
@@ -19,6 +21,16 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'scored',
+    loadChildren: () => import('./scored/scored.module').then( m => m.ScoredPageModule),
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'scoreboard',
+    loadChildren: () => import('./scoreboard/scoreboard.module').then( m => m.ScoreboardPageModule),
     canActivate: [AuthGuardService]
   }
 ];
