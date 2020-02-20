@@ -13,7 +13,6 @@ export class AppService {
   user: UserInformation;
   authState = null;
   showLoader = new Subject<boolean>();
-  loadTopScorer = new Subject<void>();
   selectedAppLanguage: SELECTED_APP_LANGUAGE;
   score: ScoreCard;
 
@@ -32,7 +31,7 @@ export class AppService {
   async presentToast(msg: any, toastType: string) {
     const toast = await this.toastController.create({
       message: msg,
-      duration: 4000,
+      duration: 2000,
       color: toastType,
       keyboardClose: true,
       mode: 'ios',

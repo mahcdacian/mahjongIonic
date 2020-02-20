@@ -52,14 +52,17 @@ export class HomePage implements OnInit {
   }
 
   showTopPlayer(): void {
-    this.router.navigate(['/scoreboard']);
     this.appService.showLoader.next(true);
-    this.appService.loadTopScorer.next();
+    this.router.navigate(['/scoreboard']);
   }
 
   onQREnter(qrCode: string) {
     if (qrCode.length === 8) {
       this.scanCompleteHandler(qrCode);
     }
+  }
+  showMyScore(): void {
+    this.appService.showLoader.next(true);
+    this.router.navigate(['/userhistory']);
   }
 }

@@ -32,6 +32,11 @@ const routes: Routes = [
     path: 'scoreboard',
     loadChildren: () => import('./scoreboard/scoreboard.module').then( m => m.ScoreboardPageModule),
     canActivate: [AuthGuardService]
+  },
+  {
+    path: 'userhistory',
+    loadChildren: () => import('./userhistory/userhistory.module').then( m => m.UserhistoryPageModule),
+    canActivate: [AuthGuardService]
   }
 ];
 

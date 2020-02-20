@@ -71,8 +71,12 @@ export class ScoredPage implements OnInit, AfterViewInit {
   }
 
   showTopPlayer(): void {
-    this.router.navigate(['/scoreboard']);
     this.appService.showLoader.next(true);
-    this.appService.loadTopScorer.next();
+    this.router.navigate(['/scoreboard']);
+  }
+
+  showMyScore(): void {
+    this.appService.showLoader.next(true);
+    this.router.navigate(['/userhistory']);
   }
 }

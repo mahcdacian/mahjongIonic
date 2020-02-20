@@ -65,7 +65,7 @@
         <ion-row justify-content-center align-items-center>
           <ion-col size-md="6" size-xl="4" size-lg="6">
             <div class="row-img">
-            <ion-img [src]="'../assets/images/my_score.png'" class="img-btn"></ion-img>
+            <ion-img [src]="'../assets/images/my_score.png'" class="img-btn" (click)="showMyScore()"></ion-img>
             <ion-img [src]="'../assets/images/top_player_score.png'" class="img-btn" (click)="showTopPlayer()"></ion-img>
             <ion-img [src]="'../assets/images/new_scan.png'" class="img-btn" (click)="showScanner = true;"></ion-img>
           </div>

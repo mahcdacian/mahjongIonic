@@ -31,9 +31,9 @@ export class LoginPage implements OnInit {
     private afAuth: AngularFireAuth,
     public appService: AppService,
     private router: Router
-    ) { }
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 
 
@@ -49,7 +49,9 @@ export class LoginPage implements OnInit {
           this.userDetails.email = email;
           this.appService.authState = res.user;
           this.appService.setUser(this.userDetails);
-          this.appService.presentToast(this.appService.getAppMessage(SUCCESS_MESSAGE.SUCC_REGISTER_LOGIN, MESSAGE_TYPE.SUCCESS), 'success');
+          // this.appService.presentToast
+          // (this.appService.getAppMessage
+          // (SUCCESS_MESSAGE.SUCC_REGISTER_LOGIN, MESSAGE_TYPE.SUCCESS), 'success');
           this.router.navigate(['/home']);
         } else {
           this.appService.presentToast(this.appService.getAppMessage(ERROR_MESSAGE.ERR_EMAIL_NOT_VERIFIED, MESSAGE_TYPE.ERROR), 'danger');
