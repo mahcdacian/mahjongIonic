@@ -18,7 +18,9 @@ export const ENGLISH_STRING = {
     },
     SUCCESS_MESSAGE_EN: {
         SUCSS_REGISTER_SUCCESSFUL: 'Registration successful.Please check your email for account activation',
-        SUCC_REGISTER_LOGIN: 'Welcome, User logged in successful'
+        SUCC_REGISTER_LOGIN: 'Welcome, User logged in successful',
+        SUCC_FORGOT_PASS_LINK_SENT: 'Check your email for a link to reset your password.' +
+        ' If it doesn’t appear within a few minutes, check your spam folder.'
     }
 };
 
@@ -47,7 +49,9 @@ export const ENGLISH_CHINESE_STRING = {
     },
     SUCCESS_MESSAGE_EN_CH: {
         SUCSS_REGISTER_SUCCESSFUL: 'Registration successful.Please check your email for account activation',
-        SUCC_REGISTER_LOGIN: 'Welcome, User logged in successful'
+        SUCC_REGISTER_LOGIN: 'Welcome, User logged in successful',
+        SUCC_FORGOT_PASS_LINK_SENT: 'Check your email for a link to reset your password.' +
+        ' If it doesn’t appear within a few minutes, check your spam folder.'
     }
 };
 
@@ -71,5 +75,6 @@ export enum ERROR_MESSAGE {
 }
 export enum SUCCESS_MESSAGE {
     SUCSS_REGISTER_SUCCESSFUL = 'SUCSS_REGISTER_SUCCESSFUL',
-    SUCC_REGISTER_LOGIN = 'SUCC_REGISTER_LOGIN'
+    SUCC_REGISTER_LOGIN = 'SUCC_REGISTER_LOGIN',
+    SUCC_FORGOT_PASS_LINK_SENT = 'SUCC_FORGOT_PASS_LINK_SENT'
 }

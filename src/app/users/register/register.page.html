@@ -46,8 +46,7 @@
                       [ngModelOptions]="{standalone: true}"></ion-input>
                     <p class="info-text">
                       <ion-text color="danger">*
-                      </ion-text>Please ensure email address is valid as winners will be contacted primarily via email.
-                      勝出者將會收到電郵通知，請確保電郵地址正確
+                      </ion-text>{{appService.getAppLabels(appLabels.INFO_TEXT1)}}
                     </p>
                   </div>
                   <div padding class=" form-group" style="padding-top: unset;">
@@ -64,7 +63,7 @@
                       [ngModelOptions]="{standalone: true}"></ion-input>
                       <p class="info-text">
                         <ion-text color="danger">*
-                        </ion-text>*Winners will be contacted both via email and SMS if they have provided mobile number in this form. 勝出者如有填寫手機號碼，屆時將會收到電郵及短信通知得獎。
+                        </ion-text>{{appService.getAppLabels(appLabels.INFO_TEXT2)}}
                       </p>
                   </div>
                   <div padding class=" form-group" style="padding-top: unset;">

@@ -24,7 +24,7 @@ export class LoginPage implements OnInit {
   };
   email = '';
   password = '';
-
+  forgotPassword = false;
   appLables = APP_LABELS;
 
   constructor(
@@ -40,29 +40,45 @@ export class LoginPage implements OnInit {
   async login() {
     this.appService.showLoader.next(true);
     const { email, password } = this;
-    try {
-      const res = await this.afAuth.auth.signInWithEmailAndPassword(email, password);
-      this.appService.showLoader.next(false);
-      if (res.user) {
-        if (res.user && res.user.emailVerified) {
-          this.userDetails.id = res.user.uid;
-          this.userDetails.email = email;
-          this.appService.authState = res.user;
-          this.appService.setUser(this.userDetails);
-          // this.appService.presentToast
-          // (this.appService.getAppMessage
-          // (SUCCESS_MESSAGE.SUCC_REGISTER_LOGIN, MESSAGE_TYPE.SUCCESS), 'success');
-          this.router.navigate(['/home']);
-        } else {
-          this.appService.presentToast(this.appService.getAppMessage(ERROR_MESSAGE.ERR_EMAIL_NOT_VERIFIED, MESSAGE_TYPE.ERROR), 'danger');
+    if (!this.forgotPassword) {
+      try {
+        const res = await this.afAuth.auth.signInWithEmailAndPassword(email, password);
+        this.appService.showLoader.next(false);
+        if (res.user) {
+          if (res.user && res.user.emailVerified) {
+            this.userDetails.id = res.user.uid;
+            this.userDetails.email = email;
+            this.appService.authState = res.user;
+            this.appService.setUser(this.userDetails);
+            // this.appService.presentToast
+            // (this.appService.getAppMessage
+            // (SUCCESS_MESSAGE.SUCC_REGISTER_LOGIN, MESSAGE_TYPE.SUCCESS), 'success');
+            this.router.navigate(['/home']);
+          } else {
+            this.appService.presentToast(this.appService.getAppMessage(ERROR_MESSAGE.ERR_EMAIL_NOT_VERIFIED, MESSAGE_TYPE.ERROR), 'danger');
+          }
         }
+      } catch (err) {
+        this.appService.showLoader.next(false);
+        console.dir(err);
+        // if(err.code && err.code == 'auth/user-not-found') {
+        this.appService.presentToast(err.message, 'danger');
+        // }
       }
-    } catch (err) {
-      this.appService.showLoader.next(false);
-      console.dir(err);
-      // if(err.code && err.code == 'auth/user-not-found') {
-      this.appService.presentToast(err.message, 'danger');
-      // }
+    } else {
+      this.afAuth.auth.sendPasswordResetEmail(email).then(
+        () => {
+          this.forgotPassword = false;
+          this.appService.showLoader.next(false);
+          this.appService.presentToast(this.appService.getAppMessage(SUCCESS_MESSAGE.SUCC_FORGOT_PASS_LINK_SENT,
+            MESSAGE_TYPE.SUCCESS), 'success');
+        },
+        err => {
+          this.forgotPassword = false;
+          this.appService.showLoader.next(false);
+          this.appService.presentToast(err, 'danger');
+        }
+      );
     }
   }
 }

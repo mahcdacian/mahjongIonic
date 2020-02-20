@@ -7,7 +7,12 @@ export const APP_LABELS_EN = {
     CONFIRM_PASSWORD: 'Confirm Password',
     MOBILE_NUMBER: 'Mobile Number',
     FORGOT_PASSWORD: 'Forgot Password?',
-    ENTER__QR_CODE: 'Or Enter QR Code'
+    ENTER__QR_CODE: 'Or Enter QR Code',
+    EMAIL_LABEL2: 'Enter your user account\'s verified email address and we will send you a password reset link',
+    BACK_2_LOGIN: 'Go Back to Login',
+    INFO_TEXT1: 'Please ensure email address is valid as winners will be contacted primarily via email. 勝出者將會收到電郵通知，請確保電郵地址正確',
+    INFO_TEXT2: 'Winners will be contacted both via email and SMS if they' +
+    ' have provided mobile number in this form. 勝出者如有填寫手機號碼，屆時將會收到電郵及短信通知得獎。'
 };
 
 export const APP_LABELS_CH = {
@@ -19,7 +24,12 @@ export const APP_LABELS_CH = {
     CONFIRM_PASSWORD: 'Confirm Password',
     MOBILE_NUMBER: 'Mobile Number',
     FORGOT_PASSWORD: 'Forgot Password?',
-    ENTER__QR_CODE: 'Or Enter QR Code'
+    ENTER__QR_CODE: 'Or Enter QR Code',
+    EMAIL_LABEL2: 'Enter your user account\'s verified email address and we will send you a password reset link',
+    BACK_2_LOGIN: 'Go Back to Login',
+    INFO_TEXT1: 'Please ensure email address is valid as winners will be contacted primarily via email. 勝出者將會收到電郵通知，請確保電郵地址正確',
+    INFO_TEXT2: 'Winners will be contacted both via email and SMS if they' +
+    ' have provided mobile number in this form. 勝出者如有填寫手機號碼，屆時將會收到電郵及短信通知得獎。'
 };
 
 export const APP_LABELS_EN_CH = {
@@ -31,7 +41,12 @@ export const APP_LABELS_EN_CH = {
     CONFIRM_PASSWORD: 'Confirm Password 確認密碼',
     MOBILE_NUMBER: 'Mobile No 手機號碼',
     FORGOT_PASSWORD: 'Forgot Password?',
-    ENTER__QR_CODE: 'Or Enter Code 或輸入序號'
+    ENTER__QR_CODE: 'Or Enter Code 或輸入序號',
+    EMAIL_LABEL2: 'Enter your user account\'s verified email address and we will send you a password reset link',
+    BACK_2_LOGIN: 'Go Back to Login',
+    INFO_TEXT1: 'Please ensure email address is valid as winners will be contacted primarily via email. 勝出者將會收到電郵通知，請確保電郵地址正確',
+    INFO_TEXT2: 'Winners will be contacted both via email and SMS if they' +
+    ' have provided mobile number in this form. 勝出者如有填寫手機號碼，屆時將會收到電郵及短信通知得獎。'
 };
 
 export enum APP_LABELS {
@@ -43,5 +58,9 @@ export enum APP_LABELS {
     CONFIRM_PASSWORD = 'CONFIRM_PASSWORD',
     MOBILE_NUMBER = 'MOBILE_NUMBER',
     FORGOT_PASSWORD = 'FORGOT_PASSWORD',
-    ENTER__QR_CODE = 'ENTER__QR_CODE'
+    ENTER__QR_CODE = 'ENTER__QR_CODE',
+    EMAIL_LABEL2 = 'EMAIL_LABEL2',
+    BACK_2_LOGIN = 'BACK_2_LOGIN',
+    INFO_TEXT1 = 'INFO_TEXT1',
+    INFO_TEXT2 = 'INFO_TEXT2'
 }
