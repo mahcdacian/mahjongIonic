@@ -8,6 +8,9 @@
   </div>
   <ng-template #showHomeOptions>
     <div class="bg-image no-scroll" *ngIf="loadScorePage; else showAnimation">
+      <div class="back-button back-btn-alignment">
+        <ion-img [src]="'../assets/images/back_button.png'" routerLink="/home"></ion-img>
+      </div>
       <ion-grid  style="padding-bottom: unset;">
         <ion-row class="scanicon" justify-content-center align-items-center>
           <ion-col class="img-align">

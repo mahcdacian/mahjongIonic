@@ -13,6 +13,7 @@ export class AppService {
   user: UserInformation;
   authState = null;
   showLoader = new Subject<boolean>();
+  loadTopScorer = new Subject<void>();
   selectedAppLanguage: SELECTED_APP_LANGUAGE;
   score: ScoreCard;
 

@@ -53,7 +53,7 @@ export class ScoredPage implements OnInit, AfterViewInit {
         this.loadScorePage = false;
         this.appService.showLoader.next(false);
       },
-      (error) => { this.appService.presentToast(error, 'danger'); this.appService.showLoader.next(false); }
+      (error) => { this.appService.presentToast(error.error, 'danger'); this.appService.showLoader.next(false); }
     );
   }
 
@@ -73,5 +73,6 @@ export class ScoredPage implements OnInit, AfterViewInit {
   showTopPlayer(): void {
     this.router.navigate(['/scoreboard']);
     this.appService.showLoader.next(true);
+    this.appService.loadTopScorer.next();
   }
 }

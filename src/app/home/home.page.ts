@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
   showScanner = false;
+  qrCode: string;
   constructor(private appService: AppService, private httpClient: HttpClient, private router: Router) { }
 
   ngOnInit() {
@@ -26,7 +27,7 @@ export class HomePage implements OnInit {
   scanCompleteHandler(event: any) {
     this.appService.showLoader.next(true);
     this.showScanner = false;
-    this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/scanQRScodeApi?qrcode=x50y342u').subscribe(
+    this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/scanQRScodeApi?qrcode=' + event).subscribe(
       (res) => {
         if (res) {
           /* tslint:disable:no-string-literal */
@@ -46,7 +47,19 @@ export class HomePage implements OnInit {
         this.router.navigate(['/scored']);
         this.appService.showLoader.next(false);
       },
-      (error) => { this.appService.presentToast(error, 'danger'); this.appService.showLoader.next(false); }
+      (error) => { this.appService.presentToast(error.error, 'danger'); this.appService.showLoader.next(false); }
     );
+  }
+
+  showTopPlayer(): void {
+    this.router.navigate(['/scoreboard']);
+    this.appService.showLoader.next(true);
+    this.appService.loadTopScorer.next();
+  }
+
+  onQREnter(qrCode: string) {
+    if (qrCode.length === 8) {
+      this.scanCompleteHandler(qrCode);
+    }
   }
 }

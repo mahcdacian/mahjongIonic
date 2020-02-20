@@ -1,5 +1,8 @@
 <ion-content fullscreen>
   <div class="bg-image no-scroll">
+    <div class="back-button back-btn-alignment">
+      <ion-img [src]="'../assets/images/back_button.png'" routerLink="/home"></ion-img>
+    </div>
     <ion-grid style="padding-bottom: unset;">
       <ion-row class="scanicon" justify-content-center align-items-center>
         <ion-col class="img-align">
@@ -39,7 +42,7 @@
                   <div style="display: flex;" class="card-align">
                     <div class="player-info" style="width: 10%;">
                       <div class="player-card" style="text-align: -webkit-center;">
-                        <div class="serialNo">{{user.ranking}}</div>
+                        <div class="serialNo player-label">{{user.ranking}}</div>
                       </div>
                     </div>
                     <div class="player-info" style="margin-left: 1%;">
@@ -47,10 +50,11 @@
                         <ion-grid>
                           <ion-row class="ion-justify-content-start">
                             <ion-col size="6">
-                              <div class="serialNo" style="width: 50%;">{{user.name}}</div>
+                              <div class="serialNo player-label tooltip" style="width: 50%;"><span
+                                  class="tooltiptext">{{user.name}}</span>{{showUserName(user.name)}}</div>
                             </ion-col>
                             <ion-col size="6">
-                              <div class="serialNo" style="width: 50%;float: right;">{{user.score}}</div>
+                              <div class="serialNo player-label" style="width: 35%;float: right;">{{user.score}}</div>
                             </ion-col>
                           </ion-row>
                         </ion-grid>
@@ -76,7 +80,7 @@
                 <div style="display: flex;" class="card-align">
                   <div class="own-info" style="max-width: fit-content;">
                     <div class="player-card" style="text-align: -webkit-center;">
-                      <div class="serialNo" style="padding: 0px 5px 0px 5px;min-width: 30px;">
+                      <div class="serialNo player-label" style="padding: 0px 5px 0px 5px;min-width: 30px;">
                         {{currentUserRank}}</div>
                     </div>
                   </div>
@@ -85,10 +89,11 @@
                       <ion-grid>
                         <ion-row class="ion-justify-content-start">
                           <ion-col size="6">
-                            <div class="serialNo" style="width: 50%;">{{currentUserName}}</div>
+                            <div class="serialNo player-label" style="width: 50%;">{{currentUserName}}</div>
                           </ion-col>
                           <ion-col size="6">
-                            <div class="serialNo" style="width: 50%;float: right;">{{currentUserScore}}</div>
+                            <div class="serialNo player-label" style="width: 35%;float: right;">{{currentUserScore}}
+                            </div>
                           </ion-col>
                         </ion-row>
                       </ion-grid>
