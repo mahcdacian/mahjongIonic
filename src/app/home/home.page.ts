@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../shared/app.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -27,7 +27,9 @@ export class HomePage implements OnInit {
   scanCompleteHandler(event: any) {
     this.appService.showLoader.next(true);
     this.showScanner = false;
-    this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/scanQRScodeApi?qrcode=' + event).subscribe(
+    this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/scanQRScodeApi?qrcode=' + event, {
+      headers: new HttpHeaders().set('authorization', `Bearer ${this.appService.authToken }`)
+    }).subscribe(
       (res) => {
         if (res) {
           /* tslint:disable:no-string-literal */

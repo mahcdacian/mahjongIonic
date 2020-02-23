@@ -46,6 +46,7 @@ export class LoginPage implements OnInit {
         this.appService.showLoader.next(false);
         if (res.user) {
           if (res.user && res.user.emailVerified) {
+            this.appService.authToken= await res.user.getIdToken();
             this.userDetails.id = res.user.uid;
             this.userDetails.email = email;
             this.appService.authState = res.user;

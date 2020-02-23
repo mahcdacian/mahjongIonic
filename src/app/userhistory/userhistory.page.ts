@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AppService } from '../shared/app.service';
 
 @Component({
@@ -10,7 +10,9 @@ import { AppService } from '../shared/app.service';
 export class UserhistoryPage implements OnInit {
   userHistory = [];
   constructor(private httpClient: HttpClient, private appService: AppService) {
-    this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/userHistoryApi')
+    this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/userHistoryApi', {
+      headers: new HttpHeaders().set('authorization', `Bearer ${this.appService.authToken }`)
+    })
       .subscribe(
         (res) => {
           this.userHistory = [];

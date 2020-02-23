@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AppService } from '../shared/app.service';
 
 @Component({
@@ -13,7 +13,9 @@ export class ScoreboardPage implements OnInit {
   currentUserName;
   currentUserScore = 0;
   constructor(private httpClient: HttpClient, private appService: AppService) {
-    this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/topScorersAPi')
+    this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/topScorersAPi', {
+      headers: new HttpHeaders().set('authorization', `Bearer ${this.appService.authToken }`)
+    })
     .subscribe(
       (res) => {
         this.topUsers = [];

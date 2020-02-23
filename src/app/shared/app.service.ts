@@ -12,6 +12,7 @@ import { APP_LABELS_CH, APP_LABELS_EN , APP_LABELS_EN_CH} from './app.labels';
 export class AppService {
   user: UserInformation;
   authState = null;
+  authToken=null;
   showLoader = new Subject<boolean>();
   selectedAppLanguage: SELECTED_APP_LANGUAGE;
   score: ScoreCard;
