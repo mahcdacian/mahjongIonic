@@ -1,17 +1,53 @@
-.bg-image {
-    background: url('../../assets/images/background_green.png');
-    background-size: cover;
-    min-height: 100vh;
-  }
-  
-  .no-scroll .scroll-content {
-    overflow: hidden;
-  }
-  .btn-block {
-    height: auto;
-  }
-  
   .slider {
     height: 100% !important;
     width: -webkit-fill-available;
   }
+
+  .card-header {
+    background-color: white;
+    text-align: center;
+  }
+
+  .card-font {
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: "Rubik", sans-serif;
+}
+
+.btn-card {
+  width: -webkit-fill-available;
+  margin-left: 30px;
+  margin-right: 30px;
+  background-color: #149dcc !important;
+  border-color: #149dcc !important;
+  color: #ffffff !important;
+  border-radius: 100px;
+  height: 60px;
+}
+
+.bg-image {
+  background-color: #294161;
+  min-height: 100vh;
+}
+
+.no-scroll .scroll-content {
+  overflow: hidden;
+}
+
+.social-icon {
+    font-size: 32px;
+    color: #ffffff;
+    padding: 8px;
+}
+
+.slider-img {
+  display: inline-block;
+  position: relative;
+  background-size: cover;
+  height: inherit;
+}
+
+.btn-block {
+  height: 20%;
+  position: absolute;
+}

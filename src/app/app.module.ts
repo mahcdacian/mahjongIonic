@@ -16,6 +16,7 @@ import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestor
 
 const firebaseConfig = {
   // add config and remove it before promoting code same goes with environment.ts
+ 
 };
 
 @NgModule({

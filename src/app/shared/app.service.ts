@@ -3,7 +3,7 @@ import { ToastController } from '@ionic/angular';
 import { UserInformation, SELECTED_APP_LANGUAGE, MESSAGE_TYPE, ScoreCard } from './app.model';
 import { Subject } from 'rxjs';
 import { ENGLISH_STRING, CHINESE_STRING, ENGLISH_CHINESE_STRING } from './message.strings';
-import { APP_LABELS_CH, APP_LABELS_EN , APP_LABELS_EN_CH} from './app.labels';
+import { APP_LABELS_CH, APP_LABELS_EN, APP_LABELS_EN_CH } from './app.labels';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ import { APP_LABELS_CH, APP_LABELS_EN , APP_LABELS_EN_CH} from './app.labels';
 export class AppService {
   user: UserInformation;
   authState = null;
-  authToken=null;
+  authToken = null;
   showLoader = new Subject<boolean>();
   selectedAppLanguage: SELECTED_APP_LANGUAGE;
   score: ScoreCard;

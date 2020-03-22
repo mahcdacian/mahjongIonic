@@ -9,6 +9,15 @@
   <ng-template #showHomeOptions>
     <div class="bg-image no-scroll">
       <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div class="back-button logout-btn" item-end>
+              <ion-img [src]="'../assets/images/exit.png'" (click)="logout()"></ion-img>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
         <ion-row justify-content-center align-items-center class="scanicon">
           <ion-col size-md="6" size-xl="3" size-lg="6">
             <img src="../assets/images/scan_icon.png" style="height: 200px;" />

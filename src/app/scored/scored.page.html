@@ -74,7 +74,7 @@
       </ion-grid>
     </div>
     <ng-template #showAnimation>
-      <video class="video-container" [src]="appService.score.scannedScore.cardVideoUrl" (ended)="vidEnded()" id="videoUrl" autoplay></video>
+        <video class="video-container" [src]="getVideoSource()" (ended)="vidEnded()" id="videoUrl" autoplay #videoPlayer></video>
     </ng-template>
   </ng-template>
 

@@ -1,44 +1,143 @@
-<ion-slides pager="true" [options]="slideOpts" class="slider">
-  <ion-slide>
-    <h1>Slide 1</h1>
-  </ion-slide>
-  <ion-slide>
-    <ion-content>
-      <div class="bg-image no-scroll">
-        <ion-grid>
-          <ion-row align-items-center justify-content-center>
-            <ion-col size-md="6" size-lg="4" size-xl="3">
-              <img src="../assets/images/loading_page.png" />
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-        <ion-grid>
-          <ion-row justify-content-center align-items-center>
-            <ion-col size-md="6" size-xl="3" size-lg="4">
-              <ion-button expand="block" fill="clear" class="btn-block" routerLink="/users/register">
-                <img src="../assets/images/sign_up.png" />
-              </ion-button>
-            </ion-col>
-          </ion-row>
-          <ion-row justify-content-center align-items-center>
-            <ion-col size-md="6" size-xl="3" size-lg="4">
-              <ion-button expand="block" fill="clear" class="btn-block" routerLink="/users/login">
-                <img src="../assets/images/log_in.png" />
-              </ion-button>
-            </ion-col>
-          </ion-row>
-          <ion-row justify-content-center align-items-center>
-            <ion-col size-md="6" size-xl="3" size-lg="4">
-              <ion-button expand="block" fill="clear" class="btn-block" routerLink='/home'>
-                <img src="../assets/images/playguide.png" />
-              </ion-button>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </div>
-    </ion-content >
-  </ion-slide>
-  <ion-slide>
-    <h1>Slide 3</h1>
-  </ion-slide>
-</ion-slides>
+<!-- -->
+<ion-content fullscreen>
+  <div class="bg-image no-scroll">
+    <ion-grid style="padding: unset;">
+      <ion-row justify-content-center align-items-center style="background-color: #294161;">
+        <ion-col size-lg="8" size-xl="6" style="padding: unset;">
+          <ion-img [src]="'../assets/images/banner.jpg'"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid style="background-color: #1d2d43;">
+      <ng-container *ngIf="!isLargeScreen; else gridLayout">
+        <ion-row>
+          <ion-col>
+            <ion-slides pager="true" [options]="slideOpts" class="slider">
+              <ion-slide>
+                <ion-grid class="slider-img">
+                  <ion-row style="height: 100%;">
+                    <img src="../assets/images/front1_1.jpeg" />
+                  </ion-row>
+                  <ion-row justify-content-center align-items-center>
+                    <ion-button expand="block" fill="clear" style="top: 25%;position: absolute;" class="btn-block" routerLink="/users/register">
+                    <img src="../assets/images/sign_up.png" />
+                  </ion-button>
+                  </ion-row>
+                  <ion-row justify-content-center align-items-center>
+                    <ion-button expand="block" fill="clear" style="top: 50%;position: absolute;" class="btn-block" routerLink="/users/login">
+                    <img src="../assets/images/log_in.png" />
+                  </ion-button>
+                  </ion-row>
+                </ion-grid>
+              </ion-slide>
+              <ion-slide>
+                <ion-grid class="slider-img">
+                  <ion-row style="height: 100%;">
+                    <img [src]="'../assets/images/front2.jpg'" />
+                  </ion-row>
+                  <ion-row>
+                    <ion-button expand="block" fill="clear" style="top: 75%;position: absolute;" class="btn-card" (click)="redirect()" justify-content-center
+                      align-items-center>
+                      <div style="color: white;">
+                        <div>Watch now</div>
+                        <div style="padding-top: 10px;">立即觀看</div>
+                      </div>
+                    </ion-button>
+                  </ion-row>
+                </ion-grid>
+              </ion-slide>
+              <ion-slide>
+                <ion-grid class="slider-img">
+                  <ion-row style="height: 100%;">
+                    <img [src]="'../assets/images/front3.jpg'" />
+                  </ion-row>
+                  <ion-row>
+                    <ion-button expand="block" fill="clear" style="top: 75%;position: absolute;" class="btn-card" (click)="redirect()" justify-content-center
+                      align-items-center>
+                      <div style="color: white;">
+                        <div>Visit now</div>
+                        <div style="padding-top: 10px;">立即瀏覽</div>
+                      </div>
+                    </ion-button>
+                  </ion-row>
+                </ion-grid>
+              </ion-slide>
+            </ion-slides>
+          </ion-col>
+        </ion-row>
+      </ng-container>
+      <ng-template #gridLayout>
+        <ion-row justify-content-center align-items-center style="margin-top: 1%; margin-bottom: 1%;">
+          <ion-col size-lg="3" size-xl="2" style="padding: unset;">
+            <ion-card>
+              <ion-img src="../assets/images/front1.jpg" routerLink="/users/register" style="cursor: pointer;">
+              </ion-img>
+              <ion-card-header class="card-header">
+                <ion-card-title class="card-font">Mahjong Game</ion-card-title>
+                <ion-card-subtitle class="card-font">麻雀遊戲</ion-card-subtitle>
+                <ion-button expand="block" fill="clear" class="btn-card" routerLink="/users/login">
+                  <div style="color: white;">
+                    <div>SIGN IN</div>
+                    <div style="padding-top: 10px;">登入</div>
+                  </div>
+                </ion-button>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+          <ion-col size-lg="3" size-xl="2" style="padding: unset;">
+            <ion-card>
+              <img [src]="'../assets/images/front2.jpg'" />
+              <ion-card-header class="card-header">
+                <ion-card-title class="card-font">Latest media</ion-card-title>
+                <ion-card-subtitle class="card-font">最新影片內容</ion-card-subtitle>
+                <ion-button expand="block" fill="clear" class="btn-card" (click)="redirect()">
+                  <div style="color: white;">
+                    <div>Watch now</div>
+                    <div style="padding-top: 10px;">立即觀看</div>
+                  </div>
+                </ion-button>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+          <ion-col size-lg="3" size-xl="2" style="padding: unset;">
+            <ion-card>
+              <img [src]="'../assets/images/front3.jpg'" />
+              <ion-card-header class="card-header">
+                <ion-card-title class="card-font">Learn more about Vitasoy North America</ion-card-title>
+                <ion-card-subtitle class="card-font">更多關於北美維他奶</ion-card-subtitle>
+                <ion-button expand="block" fill="clear" class="btn-card" (click)="redirect()">
+                  <div style="color: white;">
+                    <div>Visit now</div>
+                    <div style="padding-top: 10px;">立即瀏覽</div>
+                  </div>
+                </ion-button>
+              </ion-card-header>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ng-template>
+    </ion-grid>
+    <ion-grid style="padding-top: 2%; padding-bottom: 2%;">
+      <ion-row justify-content-center align-items-center style="text-align: center;">
+        <ion-col size-lg="3" size-xl="2">
+          <a href="https://twitter.com/mobirise" target="_blank">
+            <span class="socicon-twitter socicon social-icon"></span>
+          </a>
+          <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+            <span class="socicon-facebook socicon social-icon"></span>
+          </a>
+          <a href="https://instagram.com/mobirise" target="_blank">
+            <span class="socicon-instagram socicon social-icon"></span>
+          </a>
+          <h6 style="font-size: 14px; color: white;">© 2020 VITASOY NORTH AMERICA INC®. ALL RIGHTS RESERVED</h6>
+        </ion-col>
+        <!-- <a href="https://www.youtube.com/c/mobirise" target="_blank">
+              
+          </a>
+          <a href="https://www.behance.net/Mobirise" target="_blank">
+              
+          </a> -->
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from '../shared/app.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,12 @@ import { Router } from '@angular/router';
 export class HomePage implements OnInit {
   showScanner = false;
   qrCode: string;
-  constructor(private appService: AppService, private httpClient: HttpClient, private router: Router) { }
+  constructor(
+    private appService: AppService,
+    private httpClient: HttpClient,
+    private router: Router,
+    private afAuth: AngularFireAuth
+  ) { }
 
   ngOnInit() {
   }
@@ -28,7 +34,7 @@ export class HomePage implements OnInit {
     this.appService.showLoader.next(true);
     this.showScanner = false;
     this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/scanQRScodeApi?qrcode=' + event, {
-      headers: new HttpHeaders().set('authorization', `Bearer ${this.appService.authToken }`)
+      headers: new HttpHeaders().set('authorization', `Bearer ${this.appService.authToken}`)
     }).subscribe(
       (res) => {
         if (res) {
@@ -63,8 +69,22 @@ export class HomePage implements OnInit {
       this.scanCompleteHandler(qrCode);
     }
   }
+
   showMyScore(): void {
     this.appService.showLoader.next(true);
     this.router.navigate(['/userhistory']);
+  }
+
+  async logout() {
+    this.appService.showLoader.next(true);
+    try {
+      await this.afAuth.auth.signOut();
+      this.appService.authState = null;
+      this.appService.showLoader.next(false);
+      this.router.navigate(['/welcome']);
+    } catch (e) {
+      this.appService.presentToast(e, 'danger');
+      this.appService.showLoader.next(false);
+    }
   }
 }

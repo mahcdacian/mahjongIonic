@@ -38,3 +38,14 @@
     }
 
 }
+
+.swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    border: 2px solid green;
+}
+
+.swiper-pagination-bullet-active {
+    background: yellow !important;
+    border: 2px solid green;
+}
