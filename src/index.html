@@ -17,11 +17,20 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Odibee+Sans&display=swap" rel="stylesheet">
   <meta name='apple-mobile-web-app-capable' content='yes' />
   <meta name='apple-mobile-web-app-status-bar-style' content='black' />
-  <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="assets/manifest.json">
+ 
 </head>
 
 <body>
-  <app-root></app-root>
+  <app-root>
+  </app-root> 
+  <div id="installContainer" class="hidden">
+    <button id="butInstall" type="button">
+      Install
+    </button>
+  </div>
+  <script src="assets/addToHome.js"></script>
 </body>
+ <!-- Install button, hidden by default -->
 
 </html>
