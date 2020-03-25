@@ -10,9 +10,16 @@ export const APP_LABELS_EN = {
     ENTER__QR_CODE: 'Or Enter QR Code',
     EMAIL_LABEL2: 'Enter your user account\'s verified email address and we will send you a password reset link',
     BACK_2_LOGIN: 'Go Back to Login',
-    INFO_TEXT1: 'Please ensure email address is valid as winners will be contacted primarily via email. 勝出者將會收到電郵通知，請確保電郵地址正確',
+    INFO_TEXT1: 'Please ensure email address is valid as winners will be contacted primarily via email.',
     INFO_TEXT2: 'Winners will be contacted both via email and SMS if they' +
-    ' have provided mobile number in this form. 勝出者如有填寫手機號碼，屆時將會收到電郵及短信通知得獎。'
+    ' have provided mobile number in this form.',
+    ASK_PERMISSION_AFTER_SCAN: 'You win! 你贏了',
+    SKIP: 'Skip 略過',
+    CONTINUE: 'Continue 繼續',
+    ACTION_NOT_SUPPORTED: 'Action Not Supported',
+    QR_SCANNER_INVALID_HEADER: 'QR Scanner is not supported on IOS Chrome browser',
+    QR_SCANNER_INVALID_LABEL: 'Please Enter QR Code manually OR Open App on Safari browser',
+    CLOSE: 'Close'
 };
 
 export const APP_LABELS_CH = {
@@ -27,9 +34,15 @@ export const APP_LABELS_CH = {
     ENTER__QR_CODE: 'Or Enter QR Code',
     EMAIL_LABEL2: 'Enter your user account\'s verified email address and we will send you a password reset link',
     BACK_2_LOGIN: 'Go Back to Login',
-    INFO_TEXT1: 'Please ensure email address is valid as winners will be contacted primarily via email. 勝出者將會收到電郵通知，請確保電郵地址正確',
-    INFO_TEXT2: 'Winners will be contacted both via email and SMS if they' +
-    ' have provided mobile number in this form. 勝出者如有填寫手機號碼，屆時將會收到電郵及短信通知得獎。'
+    INFO_TEXT1: ' 勝出者將會收到電郵通知，請確保電郵地址正確',
+    INFO_TEXT2: '勝出者如有填寫手機號碼，屆時將會收到電郵及短信通知得獎。',
+    ASK_PERMISSION_AFTER_SCAN: 'You win! 你贏了',
+    SKIP: 'Skip 略過',
+    CONTINUE: 'Continue 繼續',
+    ACTION_NOT_SUPPORTED: 'Action Not Supported',
+    QR_SCANNER_INVALID_HEADER: 'QR Scanner is not supported on IOS Chrome browser',
+    QR_SCANNER_INVALID_LABEL: 'Please Enter QR Code manually OR Open App on Safari browser',
+    CLOSE: 'Close'
 };
 
 export const APP_LABELS_EN_CH = {
@@ -46,7 +59,14 @@ export const APP_LABELS_EN_CH = {
     BACK_2_LOGIN: 'Go Back to Login',
     INFO_TEXT1: 'Please ensure email address is valid as winners will be contacted primarily via email. 勝出者將會收到電郵通知，請確保電郵地址正確',
     INFO_TEXT2: 'Winners will be contacted both via email and SMS if they' +
-    ' have provided mobile number in this form. 勝出者如有填寫手機號碼，屆時將會收到電郵及短信通知得獎。'
+    ' have provided mobile number in this form. 勝出者如有填寫手機號碼，屆時將會收到電郵及短信通知得獎。',
+    ASK_PERMISSION_AFTER_SCAN: 'You win! 你贏了',
+    SKIP: 'Skip 略過',
+    CONTINUE: 'Continue 繼續',
+    ACTION_NOT_SUPPORTED: 'Action Not Supported',
+    QR_SCANNER_INVALID_HEADER: 'QR Scanner is not supported on IOS Chrome browser',
+    QR_SCANNER_INVALID_LABEL: 'Please Enter QR Code manually OR Open App on Safari browser',
+    CLOSE: 'Close'
 };
 
 export enum APP_LABELS {
@@ -62,5 +82,12 @@ export enum APP_LABELS {
     EMAIL_LABEL2 = 'EMAIL_LABEL2',
     BACK_2_LOGIN = 'BACK_2_LOGIN',
     INFO_TEXT1 = 'INFO_TEXT1',
-    INFO_TEXT2 = 'INFO_TEXT2'
+    INFO_TEXT2 = 'INFO_TEXT2',
+    ASK_PERMISSION_AFTER_SCAN = 'ASK_PERMISSION_AFTER_SCAN',
+    CONTINUE = 'CONTINUE',
+    SKIP = 'SKIP',
+    ACTION_NOT_SUPPORTED = 'ACTION_NOT_SUPPORTED',
+    QR_SCANNER_INVALID_LABEL = 'QR_SCANNER_INVALID_LABEL',
+    QR_SCANNER_INVALID_HEADER = 'QR_SCANNER_INVALID_HEADER',
+    CLOSE = 'CLOSE'
 }

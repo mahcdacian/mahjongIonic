@@ -4,6 +4,7 @@ import { timer } from 'rxjs';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AlertController } from '@ionic/angular';
+import { APP_LABELS } from '../shared/app.labels';
 
 @Component({
   selector: 'app-scored',
@@ -21,6 +22,7 @@ export class ScoredPage implements OnInit, AfterViewInit {
   counter;
   interval;
   isSafari = false;
+  appLabels = APP_LABELS;
   @ViewChild('videoPlayer', {static: false}) videoplayer: ElementRef;
   ngOnInit() {
     this.counter = this.appService.score.previousScore;
@@ -40,23 +42,48 @@ export class ScoredPage implements OnInit, AfterViewInit {
   onCodeScanResult(code: any) {
   }
 
+  async presentNoScannerDialog() {
+    const alert = await this.alertController.create({
+      header: this.appService.getAppLabels(this.appLabels.ACTION_NOT_SUPPORTED),
+      subHeader: this.appService.getAppLabels(this.appLabels.QR_SCANNER_INVALID_HEADER),
+      message: this.appService.getAppLabels(this.appLabels.QR_SCANNER_INVALID_LABEL),
+      mode: 'ios',
+      buttons: [
+        {
+          text: this.appService.getAppLabels(this.appLabels.CLOSE),
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            this.showScanner = false;
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
   showQRScanner(): void {
     this.showScanner = true;
+    if (navigator.userAgent.match('CriOS')) {
+      this.presentNoScannerDialog();
+    }
   }
 
   async presentAlertConfirm() {
     const alert = await this.alertController.create({
-      header: 'Show New Score',
+      header: this.appService.getAppLabels(this.appLabels.ASK_PERMISSION_AFTER_SCAN),
+      mode: 'ios',
       buttons: [
         {
-          text: 'No',
+          text: this.appService.getAppLabels(this.appLabels.SKIP),
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
             this.router.navigate(['/home']);
           }
         }, {
-          text: 'Yes',
+          text: this.appService.getAppLabels(this.appLabels.CONTINUE),
           handler: () => {
             if (!this.loadScorePage) {
               this.videoplayer.nativeElement.src = this.appService.score.scannedScore.cardVideoUrl;

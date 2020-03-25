@@ -10,7 +10,7 @@ export class WelcomePage implements OnInit,OnChanges {
     initialSlide: 0,
     speed: 400,
     mode: 'ios',
-    pager: true 
+    pager: true
   };
   isLargeScreen = true;
   screenHeight: number;
@@ -29,7 +29,7 @@ export class WelcomePage implements OnInit,OnChanges {
     }
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   ngOnChanges() {

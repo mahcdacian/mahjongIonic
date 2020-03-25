@@ -58,6 +58,10 @@
     margin-bottom: 5%;
     width: -webkit-fill-available;
     display: table;
+    float: right;
+    background-color: white;
+    height: 35px;    
+    margin-right: 6%;
 }
 
 .player-card {
@@ -98,4 +102,12 @@
     .scorex {
         font-size: 25px;
     }
+}
+
+.coin-image {
+    width: 20%;
+    position: absolute;
+    margin-top: -2%;
+    padding-left: 2%;
+
 }

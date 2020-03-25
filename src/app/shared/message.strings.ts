@@ -48,7 +48,7 @@ export const ENGLISH_CHINESE_STRING = {
         ERR_ACCEPT_TERMS_AND_CONDITION: 'You need to accept the terms and condition to continue registration'
     },
     SUCCESS_MESSAGE_EN_CH: {
-        SUCSS_REGISTER_SUCCESSFUL: 'Registration successful.Please check your email for account activation',
+        SUCSS_REGISTER_SUCCESSFUL: 'Registration successful! Start drawing mahjong tiles to earn points! 註冊成功！系統會自動進入遊戲',
         SUCC_REGISTER_LOGIN: 'Welcome, User logged in successful',
         SUCC_FORGOT_PASS_LINK_SENT: 'Check your email for a link to reset your password.' +
         ' If it doesn’t appear within a few minutes, check your spam folder.'

@@ -14,53 +14,51 @@
           <ion-col>
             <ion-slides pager="true" [options]="slideOpts" class="slider">
               <ion-slide>
-                <ion-grid class="slider-img">
-                  <ion-row style="height: 100%;">
-                    <img src="../assets/images/front1_1.jpeg" />
-                  </ion-row>
+                <div class="slider-img">
+                  <img class="new-img-prop" [src]="'../assets/images/front1_1.jpeg'" />
                   <ion-row justify-content-center align-items-center>
-                    <ion-button expand="block" fill="clear" style="top: 25%;position: absolute;" class="btn-block" routerLink="/users/register">
-                    <img src="../assets/images/sign_up.png" />
-                  </ion-button>
-                  </ion-row>
-                  <ion-row justify-content-center align-items-center>
-                    <ion-button expand="block" fill="clear" style="top: 50%;position: absolute;" class="btn-block" routerLink="/users/login">
-                    <img src="../assets/images/log_in.png" />
-                  </ion-button>
-                  </ion-row>
-                </ion-grid>
-              </ion-slide>
-              <ion-slide>
-                <ion-grid class="slider-img">
-                  <ion-row style="height: 100%;">
-                    <img [src]="'../assets/images/front2.jpg'" />
-                  </ion-row>
-                  <ion-row>
-                    <ion-button expand="block" fill="clear" style="top: 75%;position: absolute;" class="btn-card" (click)="redirect()" justify-content-center
-                      align-items-center>
-                      <div style="color: white;">
-                        <div>Watch now</div>
-                        <div style="padding-top: 10px;">立即觀看</div>
-                      </div>
+                    <ion-button expand="block" fill="clear" style="top: 15%;position: absolute;" class="btn-block"
+                      routerLink="/users/register">
+                      <img [src]="'../assets/images/sign_up.png'" />
                     </ion-button>
                   </ion-row>
-                </ion-grid>
-              </ion-slide>
-              <ion-slide>
-                <ion-grid class="slider-img">
-                  <ion-row style="height: 100%;">
-                    <img [src]="'../assets/images/front3.jpg'" />
-                  </ion-row>
-                  <ion-row>
-                    <ion-button expand="block" fill="clear" style="top: 75%;position: absolute;" class="btn-card" (click)="redirect()" justify-content-center
-                      align-items-center>
-                      <div style="color: white;">
-                        <div>Visit now</div>
-                        <div style="padding-top: 10px;">立即瀏覽</div>
-                      </div>
+                  <ion-row justify-content-center align-items-center>
+                    <ion-button expand="block" fill="clear" style="top: 40%;position: absolute;" class="btn-block"
+                      routerLink="/users/login">
+                      <img [src]="'../assets/images/log_in.png'" />
                     </ion-button>
                   </ion-row>
-                </ion-grid>
+                  <ion-row justify-content-center align-items-center>
+                    <ion-button expand="block" fill="clear" style="top: 65%;position: absolute;" class="btn-block"
+                      routerLink="/howtoplay">
+                      <img [src]="'../assets/images/playguide.png'" />
+                    </ion-button>
+                  </ion-row>
+                </div>
+              </ion-slide>
+              <ion-slide>
+                <div class="slider-img">
+                  <img class="new-img-prop" [src]="'../assets/images/front2.jpg'" />
+                  <ion-button expand="block" fill="clear" style="top: 75%;position: absolute;" class="btn-card"
+                    (click)="redirect()" justify-content-center align-items-center>
+                    <div style="color: white;">
+                      <div>Watch now</div>
+                      <div style="padding-top: 10px;">立即觀看</div>
+                    </div>
+                  </ion-button>
+                </div>
+              </ion-slide>
+              <ion-slide>
+                <div class="slider-img">
+                  <img class="new-img-prop" [src]="'../assets/images/front3.jpg'" />
+                  <ion-button expand="block" fill="clear" style="top: 75%;position: absolute;" class="btn-card"
+                    (click)="redirect()" justify-content-center align-items-center>
+                    <div style="color: white;">
+                      <div>Visit now</div>
+                      <div style="padding-top: 10px;">立即瀏覽</div>
+                    </div>
+                  </ion-button>
+                </div>
               </ion-slide>
             </ion-slides>
           </ion-col>
@@ -70,15 +68,26 @@
         <ion-row justify-content-center align-items-center style="margin-top: 1%; margin-bottom: 1%;">
           <ion-col size-lg="3" size-xl="2" style="padding: unset;">
             <ion-card>
-              <ion-img src="../assets/images/front1.jpg" routerLink="/users/register" style="cursor: pointer;">
-              </ion-img>
+              <img [src]="'../assets/images/front1_1.jpeg'" routerLink="/users/register" style="cursor: pointer;" />
+              <ion-row justify-content-center align-items-center>
+                <ion-button expand="block" fill="clear" style="top: 15%;position: absolute;" class="btn-block"
+                  routerLink="/users/register">
+                  <img [src]="'../assets/images/sign_up.png'" />
+                </ion-button>
+              </ion-row>
+              <ion-row justify-content-center align-items-center>
+                <ion-button expand="block" fill="clear" style="top: 40%;position: absolute;" class="btn-block"
+                  routerLink="/users/login">
+                  <img [src]="'../assets/images/log_in.png'" />
+                </ion-button>
+              </ion-row>
               <ion-card-header class="card-header">
                 <ion-card-title class="card-font">Mahjong Game</ion-card-title>
                 <ion-card-subtitle class="card-font">麻雀遊戲</ion-card-subtitle>
-                <ion-button expand="block" fill="clear" class="btn-card" routerLink="/users/login">
+                <ion-button expand="block" fill="clear" class="btn-card" routerLink="/howtoplay">
                   <div style="color: white;">
-                    <div>SIGN IN</div>
-                    <div style="padding-top: 10px;">登入</div>
+                    <div>HOW TO PLAY</div>
+                    <div style="padding-top: 10px;">遊戲玩法</div>
                   </div>
                 </ion-button>
               </ion-card-header>

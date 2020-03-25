@@ -37,6 +37,10 @@ const routes: Routes = [
     path: 'userhistory',
     loadChildren: () => import('./userhistory/userhistory.module').then( m => m.UserhistoryPageModule),
     canActivate: [AuthGuardService]
+  },
+  {
+    path: 'howtoplay',
+    loadChildren: () => import('./howtoplay/howtoplay.module').then( m => m.HowtoplayPageModule)
   }
 ];
 

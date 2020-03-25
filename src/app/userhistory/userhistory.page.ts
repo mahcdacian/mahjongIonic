@@ -9,6 +9,7 @@ import { AppService } from '../shared/app.service';
 })
 export class UserhistoryPage implements OnInit {
   userHistory = [];
+  totalScore = 0;
   constructor(private httpClient: HttpClient, private appService: AppService) {
     this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/userHistoryApi', {
       headers: new HttpHeaders().set('authorization', `Bearer ${this.appService.authToken }`)
@@ -18,6 +19,7 @@ export class UserhistoryPage implements OnInit {
           this.userHistory = [];
           /* tslint:disable:no-string-literal */
           if (res && res['countData']) {
+            this.totalScore = res['totalScore'];
             this.userHistory = res['countData'];
           }
           /* tslint:enable:no-string-literal */

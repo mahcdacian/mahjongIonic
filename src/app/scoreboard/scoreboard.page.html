@@ -53,8 +53,12 @@
                               <div class="serialNo player-label tooltip" style="width: 50%;"><span
                                   class="tooltiptext">{{user.name}}</span>{{showUserName(user.name)}}</div>
                             </ion-col>
-                            <ion-col size="6">
+                            <ion-col size="4">
                               <div class="serialNo player-label" style="width: 35%;float: right;">{{user.score}}</div>
+                            </ion-col>
+                            <ion-col size="2">
+                              <div class="coin-container">
+                                <img style="width: 75%;" src="../assets/images/coin.png" ></div>
                             </ion-col>
                           </ion-row>
                         </ion-grid>
@@ -91,9 +95,13 @@
                           <ion-col size="6">
                             <div class="serialNo player-label" style="width: 50%;">{{currentUserName}}</div>
                           </ion-col>
-                          <ion-col size="6">
+                          <ion-col size="4">
                             <div class="serialNo player-label" style="width: 35%;float: right;">{{currentUserScore}}
                             </div>
+                          </ion-col>
+                          <ion-col size="2">
+                            <div class="coin-container">
+                              <img style="width: 75%;" src="../assets/images/coin.png" ></div>
                           </ion-col>
                         </ion-row>
                       </ion-grid>

@@ -3,6 +3,8 @@ import { AppService } from '../shared/app.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AlertController } from '@ionic/angular';
+import { APP_LABELS } from '../shared/app.labels';
 
 @Component({
   selector: 'app-home',
@@ -12,11 +14,13 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class HomePage implements OnInit {
   showScanner = false;
   qrCode: string;
+  appLabels = APP_LABELS;
   constructor(
     private appService: AppService,
     private httpClient: HttpClient,
     private router: Router,
-    private afAuth: AngularFireAuth
+    private afAuth: AngularFireAuth,
+    public alertController: AlertController
   ) { }
 
   ngOnInit() {
@@ -26,8 +30,32 @@ export class HomePage implements OnInit {
     // this.appService.presentToast(code, 'medium');
   }
 
+  async presentNoScannerDialog() {
+    const alert = await this.alertController.create({
+      header: this.appService.getAppLabels(this.appLabels.ACTION_NOT_SUPPORTED),
+      subHeader: this.appService.getAppLabels(this.appLabels.QR_SCANNER_INVALID_HEADER),
+      message: this.appService.getAppLabels(this.appLabels.QR_SCANNER_INVALID_LABEL),
+      mode: 'ios',
+      buttons: [
+        {
+          text: this.appService.getAppLabels(this.appLabels.CLOSE),
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            this.showScanner = false;
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
   showQRScanner(): void {
     this.showScanner = true;
+    if (navigator.userAgent.match('CriOS')) {
+      this.presentNoScannerDialog();
+    }
   }
 
   scanCompleteHandler(event: any) {

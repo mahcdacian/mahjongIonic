@@ -1,0 +1,42 @@
+.bg-image {
+    background: url('../../assets/images/background_green.png');
+    background-size: cover;
+    min-height: 100vh;
+  }
+  
+  .no-scroll .scroll-content {
+    overflow: hidden;
+  }
+
+  .btn-block {
+    height: auto;
+  }
+  
+  .base-view {
+    border-radius: 24px;
+    box-shadow: 16px -12px 0px 4px #98C645;
+    width: 95%;
+    margin-top: 15%;
+  }
+
+  .terms-view {
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 6px -5px 0px 4px #B9BEBC;
+  }
+
+  .terms-text {
+    overflow-y: scroll;
+    font-size: 14px;
+    font-family: 'Sintony', 'Questrial', sans-serif;
+  }
+  .terms-container {
+    margin: 15px 15px 15px 15px;
+  }
+
+  .back-btn-alignment {
+    position: absolute;
+    z-index: 10;
+    padding-top: 5px;
+    padding-left: 5px;
+}

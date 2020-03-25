@@ -15,9 +15,17 @@
           <ion-row>
             <ion-col size="7"><img src="../assets/images/my_score_logo.png" style="float: left;" /></ion-col>
             <ion-col size="5" align-self-end>
-              <div class="player-info" style="float: right;margin-right: 17px;">
+              <div class="player-info" style="">
                 <div class="player-card" style="text-align: -webkit-center;">
-                  <div class="serialNo player-label" align-self-center>276726</div>
+                  <div class="serialNo player-label" style="margin-left: -10%;" align-self-center>
+                    <ng-container *ngIf="totalScore == 0; else score">
+                      ...
+                    </ng-container>
+                    <ng-template #score>
+                      {{ totalScore }}
+                    </ng-template>
+                    <img class="coin-image" src="../assets/images/coin.png">
+                  </div>
                 </div>
               </div>
             </ion-col>
