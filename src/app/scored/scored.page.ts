@@ -77,6 +77,7 @@ export class ScoredPage implements OnInit, AfterViewInit {
       buttons: [
       {
           text: this.appService.getAppLabels(this.appLabels.CONTINUE),
+          cssClass:'boldText',
           handler: () => {
             if (!this.loadScorePage) {
               this.videoplayer.nativeElement.src = this.appService.score.scannedScore.cardVideoUrl;
