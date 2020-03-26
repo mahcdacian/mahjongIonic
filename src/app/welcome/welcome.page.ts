@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener, OnChanges } from '@angular/core';
-
+import { IonSlides } from '@ionic/angular';
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.page.html',
@@ -8,7 +8,7 @@ import { Component, OnInit, HostListener, OnChanges } from '@angular/core';
 export class WelcomePage implements OnInit,OnChanges {
   slideOpts = {
     initialSlide: 0,
-    speed: 400,
+    speed: 500,
     mode: 'ios',
     pager: true
   };
@@ -20,6 +20,9 @@ export class WelcomePage implements OnInit,OnChanges {
     this.getScreenSize();
   }
 
+  slidesDidLoad(slides: IonSlides) {
+    slides.startAutoplay();
+  }
   @HostListener('window:resize', ['$event'])
   getScreenSize(event?) {
     this.screenHeight = window.innerHeight;
