@@ -17,8 +17,9 @@ export class LoginPage implements OnInit {
   userDetails: UserInformation = {
     firstName: '',
     lastName: '',
-    mobileNumber: 0,
+    mobileNumber: '',
     address: '',
+    postalCode:'',
     id: '',
     email: ''
   };

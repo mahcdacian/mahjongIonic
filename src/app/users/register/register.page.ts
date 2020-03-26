@@ -17,7 +17,8 @@ export class RegisterPage implements OnInit {
   userDetails: UserInformation = {
     firstName: '',
     lastName: '',
-    mobileNumber: undefined,
+    mobileNumber: '',
+    postalCode: '',
     address: '',
     id: '',
     email: ''
@@ -108,6 +109,15 @@ export class RegisterPage implements OnInit {
       this.errorMessage = ERROR_MESSAGE.ERR_MOBILENUMBER_REQUIRED;
       return false;
     } */
+
+    if (!this.userDetails.postalCode || this.userDetails.postalCode === '') {
+      this.errorMessage = ERROR_MESSAGE.ERR_POSTALCODE_REQUIRED;
+      return false;
+    }
+    if (this.userDetails.postalCode.toString().length >= 8 || this.userDetails.postalCode.toString().length < 5) {
+      this.errorMessage = ERROR_MESSAGE.ERR_POSTALCODE_LENGTH_EXCEEDS;
+      return false;
+    }
     if (this.userDetails.mobileNumber &&
       !(this.userDetails.mobileNumber.toString().length <= 12 && this.userDetails.mobileNumber.toString().length >= 10)) {
       this.errorMessage = ERROR_MESSAGE.ERR_MOBILENUMBER_REQUIRED;

@@ -75,14 +75,7 @@ export class ScoredPage implements OnInit, AfterViewInit {
       header: this.appService.getAppLabels(this.appLabels.ASK_PERMISSION_AFTER_SCAN),
       mode: 'ios',
       buttons: [
-        {
-          text: this.appService.getAppLabels(this.appLabels.SKIP),
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {
-            this.router.navigate(['/home']);
-          }
-        }, {
+      {
           text: this.appService.getAppLabels(this.appLabels.CONTINUE),
           handler: () => {
             if (!this.loadScorePage) {
@@ -90,7 +83,14 @@ export class ScoredPage implements OnInit, AfterViewInit {
               this.videoplayer.nativeElement.play();
             }
           }
-        }
+        },  {
+          text: this.appService.getAppLabels(this.appLabels.SKIP),
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            this.router.navigate(['/home']);
+          }
+        } 
       ]
     });
 

@@ -39,7 +39,7 @@
               <ion-slide>
                 <div class="slider-img">
                   <img class="new-img-prop" [src]="'../assets/images/front2.jpg'" />
-                  <ion-button expand="block" fill="clear" style="top: 75%;position: absolute;" class="btn-card"
+                  <ion-button expand="block" fill="clear" style="top: 75%;position: absolute; margin-left: 32%; width: fit-content;" class="btn-card"
                     (click)="redirect()" justify-content-center align-items-center>
                     <div style="color: white;">
                       <div>Watch now</div>
@@ -51,8 +51,8 @@
               <ion-slide>
                 <div class="slider-img">
                   <img class="new-img-prop" [src]="'../assets/images/front3.jpg'" />
-                  <ion-button expand="block" fill="clear" style="top: 75%;position: absolute;" class="btn-card"
-                    (click)="redirect()" justify-content-center align-items-center>
+                  <ion-button expand="block" fill="clear" style="top: 75%;position: absolute; margin-left: 32%; width: fit-content;" class="btn-card"
+                    (click)="visitNow()" justify-content-center align-items-center>
                     <div style="color: white;">
                       <div>Visit now</div>
                       <div style="padding-top: 10px;">立即瀏覽</div>
@@ -76,16 +76,16 @@
                 </ion-button>
               </ion-row>
               <ion-row justify-content-center align-items-center>
-                <ion-button expand="block" fill="clear" style="top: 40%;position: absolute;" class="btn-block"
+                <ion-button expand="block" fill="clear" style="top: 35%;position: absolute;" class="btn-block"
                   routerLink="/users/login">
                   <img [src]="'../assets/images/log_in.png'" />
                 </ion-button>
               </ion-row>
               <ion-card-header class="card-header">
                 <ion-card-title class="card-font">Mahjong Game</ion-card-title>
-                <ion-card-subtitle class="card-font">麻雀遊戲</ion-card-subtitle>
+                <ion-card-subtitle class="card-font">麻將遊戲</ion-card-subtitle>
                 <ion-button expand="block" fill="clear" class="btn-card" routerLink="/howtoplay">
-                  <div style="color: white;">
+                  <div style="color: white; font-size: 12px;">
                     <div>HOW TO PLAY</div>
                     <div style="padding-top: 10px;">遊戲玩法</div>
                   </div>
@@ -99,8 +99,8 @@
               <ion-card-header class="card-header">
                 <ion-card-title class="card-font">Latest media</ion-card-title>
                 <ion-card-subtitle class="card-font">最新影片內容</ion-card-subtitle>
-                <ion-button expand="block" fill="clear" class="btn-card" (click)="redirect()">
-                  <div style="color: white;">
+                <ion-button expand="block" fill="clear" class="btn-card" (click)="watchNow()">
+                  <div style="color: white; font-size: 12px">
                     <div>Watch now</div>
                     <div style="padding-top: 10px;">立即觀看</div>
                   </div>
@@ -115,7 +115,7 @@
                 <ion-card-title class="card-font">Learn more about Vitasoy North America</ion-card-title>
                 <ion-card-subtitle class="card-font">更多關於北美維他奶</ion-card-subtitle>
                 <ion-button expand="block" fill="clear" class="btn-card" (click)="redirect()">
-                  <div style="color: white;">
+                  <div style="color: white; font-size: 12px">
                     <div>Visit now</div>
                     <div style="padding-top: 10px;">立即瀏覽</div>
                   </div>
@@ -129,13 +129,13 @@
     <ion-grid style="padding-top: 2%; padding-bottom: 2%;">
       <ion-row justify-content-center align-items-center style="text-align: center;">
         <ion-col size-lg="3" size-xl="2">
-          <a href="https://twitter.com/mobirise" target="_blank">
+          <a href="https://twitter.com/myvitasoy" target="_blank">
             <span class="socicon-twitter socicon social-icon"></span>
           </a>
-          <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+          <a href="https://www.facebook.com/MyVitasoy" target="_blank">
             <span class="socicon-facebook socicon social-icon"></span>
           </a>
-          <a href="https://instagram.com/mobirise" target="_blank">
+          <a href="https://www.instagram.com/myvitasoy/" target="_blank">
             <span class="socicon-instagram socicon social-icon"></span>
           </a>
           <h6 style="font-size: 14px; color: white;">© 2020 VITASOY NORTH AMERICA INC®. ALL RIGHTS RESERVED</h6>

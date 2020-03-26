@@ -1,7 +1,8 @@
 <ion-content fullscreen>
   <div *ngIf="!showTermsAndConditionView; else showTermsAndCondition">
     <ion-grid class="bg-image no-scroll">
-      <ion-grid style="padding-bottom: unset;padding-top: unset;" class="web-hide">
+     
+      <ion-grid style="padding-bottom: unset;padding-top: unset;" >
         <ion-row>
           <ion-col style="padding-bottom: unset;">
             <div class="back-button">
@@ -41,6 +42,8 @@
                   </div>
                   <div padding class=" form-group">
                     <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.EMAIL)}}
+                      <ion-text color="danger">*
+                      </ion-text>
                     </ion-label>
                     <ion-input required type="email" class="input-field" [(ngModel)]="userDetails.email"
                       [ngModelOptions]="{standalone: true}"></ion-input>
@@ -54,6 +57,14 @@
                     </ion-label>
                     <ion-textarea rows="6" cols="20" class="input-field" [(ngModel)]="userDetails.address"
                       [ngModelOptions]="{standalone: true}"></ion-textarea>
+                  </div>
+                  <div padding class=" form-group">
+                    <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.POSTCODE)}}
+                      <ion-text color="danger">*
+                      </ion-text>
+                    </ion-label>
+                    <ion-input required type="text" class="input-field" [(ngModel)]="userDetails.postalCode"
+                      [ngModelOptions]="{standalone: true}"></ion-input>
                   </div>
                   <div padding class=" form-group">
                     <ion-label class="lable-font" position="stacked">

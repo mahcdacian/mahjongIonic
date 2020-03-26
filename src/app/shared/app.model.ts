@@ -3,7 +3,8 @@ export interface UserInformation {
     firstName: string;
     lastName: string;
     address: string;
-    mobileNumber: number;
+    mobileNumber: string;
+    postalCode:string;
     email: string;
 }
 
