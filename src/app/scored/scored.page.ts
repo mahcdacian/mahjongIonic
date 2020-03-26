@@ -102,7 +102,7 @@ export class ScoredPage implements OnInit, AfterViewInit {
     this.appService.showLoader.next(true);
     this.showScanner = false;
     this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/scanQRScodeApi?qrcode=' + event, {
-      headers: new HttpHeaders().set('authorization', `Bearer ${this.appService.authToken }`)
+      headers: new HttpHeaders().set('authorization', `Bearer ${ localStorage.getItem('authToken') }`)
     }).subscribe(
       (res) => {
         if (res) {

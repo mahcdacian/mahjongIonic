@@ -47,11 +47,11 @@ export class LoginPage implements OnInit {
         this.appService.showLoader.next(false);
         if (res.user) {
           if (res.user && res.user.emailVerified) {
-            this.appService.authToken= await res.user.getIdToken();
+            const token = await res.user.getIdToken();
             this.userDetails.id = res.user.uid;
             this.userDetails.email = email;
-            this.appService.authState = res.user;
-            this.appService.setUser(this.userDetails);
+            localStorage.setItem('authToken', token);
+            localStorage.setItem('mahjongUserData', JSON.stringify(res.user));
             // this.appService.presentToast
             // (this.appService.getAppMessage
             // (SUCCESS_MESSAGE.SUCC_REGISTER_LOGIN, MESSAGE_TYPE.SUCCESS), 'success');

@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'users/login',
     loadChildren: () => import('./users/login/login.module').then( m => m.LoginPageModule),
-    canActivate: [NavigateGuard]
+    canActivate: []
   },
   {
     path: 'users/register',
@@ -41,7 +41,15 @@ const routes: Routes = [
   {
     path: 'howtoplay',
     loadChildren: () => import('./howtoplay/howtoplay.module').then( m => m.HowtoplayPageModule)
-  }
+  },
+  {
+    path: '404',
+    loadChildren: () => import('./not-found-component/not-found-component.module').then( m => m.NotFoundComponentPageModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./not-found-component/not-found-component.module').then( m => m.NotFoundComponentPageModule)
+  },
 ];
 
 @NgModule({

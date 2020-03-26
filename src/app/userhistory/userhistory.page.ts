@@ -12,7 +12,7 @@ export class UserhistoryPage implements OnInit {
   totalScore = 0;
   constructor(private httpClient: HttpClient, private appService: AppService) {
     this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/userHistoryApi', {
-      headers: new HttpHeaders().set('authorization', `Bearer ${this.appService.authToken }`)
+      headers: new HttpHeaders().set('authorization', `Bearer ${ localStorage.getItem('authToken') }`)
     })
       .subscribe(
         (res) => {

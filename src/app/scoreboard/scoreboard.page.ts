@@ -14,7 +14,7 @@ export class ScoreboardPage implements OnInit {
   currentUserScore = 0;
   constructor(private httpClient: HttpClient, private appService: AppService) {
     this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/topScorersAPi', {
-      headers: new HttpHeaders().set('authorization', `Bearer ${this.appService.authToken }`)
+      headers: new HttpHeaders().set('authorization', `Bearer ${ localStorage.getItem('authToken') }`)
     })
     .subscribe(
       (res) => {

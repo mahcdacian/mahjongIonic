@@ -10,23 +10,12 @@ import { APP_LABELS_CH, APP_LABELS_EN, APP_LABELS_EN_CH } from './app.labels';
 })
 
 export class AppService {
-  user: UserInformation;
-  authState = null;
-  authToken = null;
   showLoader = new Subject<boolean>();
   selectedAppLanguage: SELECTED_APP_LANGUAGE;
   score: ScoreCard;
 
   constructor(private toastController: ToastController) {
     this.selectedAppLanguage = SELECTED_APP_LANGUAGE.ENGLISH_CHINESE;
-  }
-
-  setUser(user: UserInformation) {
-    this.user = user;
-  }
-
-  getUID(): string {
-    return this.user.id;
   }
 
   async presentToast(msg: any, toastType: string) {
@@ -40,10 +29,6 @@ export class AppService {
       showCloseButton: true
     });
     toast.present();
-  }
-
-  get authenticated(): boolean {
-    return this.authState !== null;
   }
 
   getAppMessage(message: string, messageType: MESSAGE_TYPE) {

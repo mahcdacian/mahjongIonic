@@ -14,7 +14,7 @@ export class AuthGuardService implements CanActivate {
   constructor(private router: Router, private appService: AppService) { }
 
   canActivate(): boolean {
-    if (!this.appService.authenticated) {
+    if (!localStorage.getItem('authToken')) {
       this.appService.presentToast(this.appService.getAppMessage(ERROR_MESSAGE.ERR_USER_NOT_LOGGED, MESSAGE_TYPE.ERROR),
         'danger');
       this.router.navigate(['/users/login']);

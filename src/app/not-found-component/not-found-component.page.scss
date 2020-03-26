@@ -1,0 +1,22 @@
+.bg-image {
+    background: url('../../assets/images/background1_green.png');
+    background-size: cover;
+    min-height: 100vh;
+  }
+  
+  .no-scroll .scroll-content {
+    overflow: hidden;
+  }
+
+  .label-not-found {
+      text-align: center;
+      font-size: 75px;
+      font-weight: 800;
+      color: white;
+  }
+
+  .not-found-text {
+    text-align: center;
+    font-size: 25px;
+    color: white;
+  }

@@ -29,9 +29,7 @@
 }
 
 .soy-img {
-    transform: skewX(-6deg);
-    height: 80px;
-    padding-top: 15px;
+    width: 50%;
 }
 
 .malt-img {
@@ -105,6 +103,10 @@
     .player-card {
         height: 35px;
     }
+
+    .soy-img {
+        width: 100%;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -123,6 +125,9 @@
     }
     .player-label {
         font-size: 12px;
+    }
+    .soy-img {
+        width: 50%;
     }
 }
 

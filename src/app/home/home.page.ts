@@ -62,7 +62,7 @@ export class HomePage implements OnInit {
     this.appService.showLoader.next(true);
     this.showScanner = false;
     this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/scanQRScodeApi?qrcode=' + event, {
-      headers: new HttpHeaders().set('authorization', `Bearer ${this.appService.authToken}`)
+      headers: new HttpHeaders().set('authorization', `Bearer ${localStorage.getItem('authToken')}`)
     }).subscribe(
       (res) => {
         if (res) {
@@ -107,7 +107,7 @@ export class HomePage implements OnInit {
     this.appService.showLoader.next(true);
     try {
       await this.afAuth.auth.signOut();
-      this.appService.authState = null;
+      localStorage.clear();
       this.appService.showLoader.next(false);
       this.router.navigate(['/welcome']);
     } catch (e) {
