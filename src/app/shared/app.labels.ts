@@ -63,9 +63,9 @@ export const APP_LABELS_EN_CH = {
     INFO_TEXT1: 'Please ensure email address is valid as winners will be contacted primarily via email. 勝出者將會收到電郵通知，請確保電郵地址正確',
     INFO_TEXT2: 'Winners will be contacted both via email and SMS if they' +
     ' have provided mobile number in this form. 勝出者如有填寫手機號碼，屆時將會收到電郵及短信通知得獎。',
-    ASK_PERMISSION_AFTER_SCAN: 'You win! 你贏了',
-    SKIP: 'Skip 略過',
-    CONTINUE: 'Continue 繼續',
+    ASK_PERMISSION_AFTER_SCAN: 'You have a winning combination! 你已贏到糊牌組合！',
+    SKIP: 'Don’t Add 不添加',
+    CONTINUE: 'Add New Score 添加新分數',
     ACTION_NOT_SUPPORTED: 'Action Not Supported',
     QR_SCANNER_INVALID_HEADER: 'Error 掃描錯誤',
     QR_SCANNER_INVALID_LABEL: 'Unable to read QR code. Please try scanning again or manually enter the printed code 無法識別二維碼，請重新掃二維碼或自行輸入序號',
