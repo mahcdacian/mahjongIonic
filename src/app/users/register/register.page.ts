@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { APP_LABELS } from '../../shared/app.labels';
 import { ERROR_MESSAGE, SUCCESS_MESSAGE } from '../../shared/message.strings';
+import { ModalController } from '@ionic/angular';
+import { AddToHomePage } from '../../add-to-home/add-to-home.page';
 
 @Component({
   selector: 'app-register',
@@ -35,10 +37,23 @@ export class RegisterPage implements OnInit {
     private afAuth: AngularFireAuth,
     public appService: AppService,
     private router: Router,
-    private afStore: AngularFirestore
+    private afStore: AngularFirestore,
+    private modalController: ModalController
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.appService.actionAddToHomeModal.subscribe(
+      (res) => {
+        if (res === 'addToHome') {
+          this.dismiss();
+          this.router.navigate(['/users/login']);
+        } else {
+          this.dismiss();
+          this.router.navigate(['/users/login']);
+        }
+      }
+    );
+  }
 
   switchToTermsAndConditionView(): void {
     if (!this.validate()) {
@@ -63,8 +78,8 @@ export class RegisterPage implements OnInit {
         res.user.sendEmailVerification().then(() => {
           this.appService.presentToast(this.appService.getAppMessage(SUCCESS_MESSAGE.SUCSS_REGISTER_SUCCESSFUL, MESSAGE_TYPE.SUCCESS),
             'success');
-          this.router.navigate(['/users/login']);
         });
+        this.openAddToHomeModal();
       }
     } catch (err) {
       this.appService.showLoader.next(false);
@@ -73,6 +88,19 @@ export class RegisterPage implements OnInit {
       this.appService.presentToast(err.message, 'danger');
       // }
     }
+  }
+
+  async openAddToHomeModal() {
+    const modal = await this.modalController.create({
+      component: AddToHomePage
+    });
+    return await modal.present();
+  }
+
+  async dismiss() {
+    this.modalController.dismiss({
+      dismissed: true
+    });
   }
 
   validate(): boolean {
@@ -97,18 +125,18 @@ export class RegisterPage implements OnInit {
       return false;
     }
     this.validateEmail();
-  /*   if (!this.userDetails.address || this.userDetails.address === '') {
-      this.errorMessage = ERROR_MESSAGE.ERR_ADDRESS_REQUIRED;
-      return false;
-    } */
-    if (this.userDetails.address&&  this.userDetails.address.toString().length >= 151) {
+    /*   if (!this.userDetails.address || this.userDetails.address === '') {
+        this.errorMessage = ERROR_MESSAGE.ERR_ADDRESS_REQUIRED;
+        return false;
+      } */
+    if (this.userDetails.address && this.userDetails.address.toString().length >= 151) {
       this.errorMessage = ERROR_MESSAGE.ERR_ADDRESS_LENGTH_EXCEEDS;
       return false;
     }
-   /*  if (!this.userDetails.mobileNumber) {
-      this.errorMessage = ERROR_MESSAGE.ERR_MOBILENUMBER_REQUIRED;
-      return false;
-    } */
+    /*  if (!this.userDetails.mobileNumber) {
+       this.errorMessage = ERROR_MESSAGE.ERR_MOBILENUMBER_REQUIRED;
+       return false;
+     } */
 
     if (!this.userDetails.postalCode || this.userDetails.postalCode === '') {
       this.errorMessage = ERROR_MESSAGE.ERR_POSTALCODE_REQUIRED;

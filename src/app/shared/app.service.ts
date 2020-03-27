@@ -18,6 +18,7 @@ export class AppService {
     this.selectedAppLanguage = SELECTED_APP_LANGUAGE.ENGLISH_CHINESE;
   }
 
+  actionAddToHomeModal = new Subject<string>();
   async presentToast(msg: any, toastType: string) {
     const toast = await this.toastController.create({
       message: msg,

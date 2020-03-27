@@ -8,13 +8,15 @@ import { RegisterPageRoutingModule } from './register-routing.module';
 
 import { RegisterPage } from './register.page';
 import { TermsConditionComponent } from './terms-condition/terms-condition.component';
+import { AddToHomePageModule } from '../../add-to-home/add-to-home.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RegisterPageRoutingModule
+    RegisterPageRoutingModule,
+    AddToHomePageModule
   ],
   declarations: [RegisterPage, TermsConditionComponent]
 })
