@@ -4,10 +4,12 @@ import { AuthGuardService } from './guard/auth-guard';
 import { NavigateGuard } from './guard/navigate.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+  { path: '',
+   pathMatch: 'full',
+  loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule) },
   {
     path: 'welcome',
-    loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule),
+    loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
   },
   {
     path: 'users/login',
