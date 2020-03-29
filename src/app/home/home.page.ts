@@ -133,6 +133,18 @@ export class HomePage implements OnInit {
   }
 
   async showAddedToHomeSuccessPrompt() {
+
+    this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/userAddToHomeApi', {
+      headers: new HttpHeaders().set('authorization', `Bearer ${localStorage.getItem('authToken')}`)
+    }).subscribe(
+      (res) => {
+        if (res) {
+           
+        }
+      },
+      (error) => { this.appService.presentToast(error.error, 'danger'); this.appService.showLoader.next(false); }
+    );
+
     const alert = await this.alertController.create({
       header: this.appService.getAppLabels('CONGRATS_ADD_TO_HOME_SUCCESS_MSG'),
       buttons: ['OK']
@@ -144,7 +156,20 @@ export class HomePage implements OnInit {
   showAddToHomePrompt(): void {
     if (this.isMobile()) {
       /* tslint:disable:no-string-literal */
-      const isInStandaloneMode = ('standalone' in window.navigator) && (window.navigator['standalone']);
+
+      let isInStandaloneMode :Boolean=false; 
+      try{
+        if( ('standalone' in window.navigator) && (window.navigator['standalone']))
+        isInStandaloneMode =true
+     }catch(err){
+
+     }
+      try{
+         if((window.matchMedia('(display-mode: standalone)').matches))
+            isInStandaloneMode=true;
+      }catch(err){
+
+      }
       this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/getUserStatusApi', {
         headers: new HttpHeaders().set('authorization', `Bearer ${localStorage.getItem('authToken')}`)
       }).subscribe(
