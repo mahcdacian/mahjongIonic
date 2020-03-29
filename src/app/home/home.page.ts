@@ -52,10 +52,24 @@ export class HomePage implements OnInit {
   }
 
   showQRScanner(): void {
+    var camPermission =false;
+    try{
+
+      var hasNavigator = typeof navigator !== 'undefined';
+      var isMediaDevicesSuported = hasNavigator && !!navigator.mediaDevices;
+      if(!isMediaDevicesSuported){
+        camPermission=true;
+      }
+      }catch(err){}
+    
     this.showScanner = true;
-    if (navigator.userAgent.match('CriOS')) {
+    
+    if (camPermission) {
       this.presentNoScannerDialog();
     }
+
+ 
+
   }
 
   scanCompleteHandler(event: any) {
