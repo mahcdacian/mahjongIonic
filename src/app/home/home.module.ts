@@ -6,6 +6,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { HttpClientModule } from '@angular/common/http';
+import { AddToHomePageModule } from '../add-to-home/add-to-home.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     IonicModule,
     HomePageRoutingModule,
     ZXingScannerModule,
-    HttpClientModule
+    HttpClientModule,
+    AddToHomePageModule
   ],
   declarations: [HomePage]
 })

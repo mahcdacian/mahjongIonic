@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: 'users/login',
     loadChildren: () => import('./users/login/login.module').then( m => m.LoginPageModule),
-    canActivate: []
+    canActivate: [NavigateGuard]
   },
   {
     path: 'users/register',

@@ -11,9 +11,11 @@ export class NavigateGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    // if (this.appService.authenticated) {
+    // if (localStorage.getItem('authToken')) {
+    //   this.router.navigate(['/home']);
     //   return false;
     // }
+    localStorage.clear();
     return true;
   }
 }

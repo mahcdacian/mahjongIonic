@@ -6,8 +6,6 @@ import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { APP_LABELS } from '../../shared/app.labels';
 import { ERROR_MESSAGE, SUCCESS_MESSAGE } from '../../shared/message.strings';
-import { ModalController } from '@ionic/angular';
-import { AddToHomePage } from '../../add-to-home/add-to-home.page';
 
 @Component({
   selector: 'app-register',
@@ -37,22 +35,10 @@ export class RegisterPage implements OnInit {
     private afAuth: AngularFireAuth,
     public appService: AppService,
     private router: Router,
-    private afStore: AngularFirestore,
-    private modalController: ModalController
+    private afStore: AngularFirestore
   ) { }
 
   ngOnInit() {
-    this.appService.actionAddToHomeModal.subscribe(
-      (res) => {
-        if (res === 'addToHome') {
-          this.dismiss();
-          this.router.navigate(['/users/login']);
-        } else {
-          this.dismiss();
-          this.router.navigate(['/users/login']);
-        }
-      }
-    );
   }
 
   switchToTermsAndConditionView(): void {
@@ -79,7 +65,7 @@ export class RegisterPage implements OnInit {
           this.appService.presentToast(this.appService.getAppMessage(SUCCESS_MESSAGE.SUCSS_REGISTER_SUCCESSFUL, MESSAGE_TYPE.SUCCESS),
             'success');
         });
-        this.openAddToHomeModal();
+        this.router.navigate(['/users/login']);
       }
     } catch (err) {
       this.appService.showLoader.next(false);
@@ -88,19 +74,6 @@ export class RegisterPage implements OnInit {
       this.appService.presentToast(err.message, 'danger');
       // }
     }
-  }
-
-  async openAddToHomeModal() {
-    const modal = await this.modalController.create({
-      component: AddToHomePage
-    });
-    return await modal.present();
-  }
-
-  async dismiss() {
-    this.modalController.dismiss({
-      dismissed: true
-    });
   }
 
   validate(): boolean {

@@ -1,9 +1,21 @@
 .msg {
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Work Sans', sans-serif;
 }
 
 .heading {
     font-family: 'Kanit', sans-serif;
-    font-size: 24px;
+    font-size: 18px;
+}
+
+.footer {
+    font-family: 'Kanit', sans-serif;
+    font-size: 18px;
+}
+
+.back-btn-alignment {
+    position: absolute;
+    z-index: 10;
+    padding-top: 5px;
+    padding-left: 5px;
 }

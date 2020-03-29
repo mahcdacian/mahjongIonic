@@ -52,9 +52,6 @@ export class LoginPage implements OnInit {
             this.userDetails.email = email;
             localStorage.setItem('authToken', token);
             localStorage.setItem('mahjongUserData', JSON.stringify(res.user));
-            // this.appService.presentToast
-            // (this.appService.getAppMessage
-            // (SUCCESS_MESSAGE.SUCC_REGISTER_LOGIN, MESSAGE_TYPE.SUCCESS), 'success');
             this.router.navigate(['/home']);
           } else {
             this.appService.presentToast(this.appService.getAppMessage(ERROR_MESSAGE.ERR_EMAIL_NOT_VERIFIED, MESSAGE_TYPE.ERROR), 'danger');

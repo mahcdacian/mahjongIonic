@@ -2,7 +2,7 @@ export const APP_LABELS_EN = {
     FIRST_NAME: 'First Name',
     LAST_NAME: 'Last Name',
     ADDRESS: 'Address',
-    POSTCODE:'Post Code',
+    POSTCODE: 'Post Code',
     EMAIL: 'Email',
     PASSWORD: 'Password',
     CONFIRM_PASSWORD: 'Confirm Password',
@@ -13,7 +13,7 @@ export const APP_LABELS_EN = {
     BACK_2_LOGIN: 'Go Back to Login 返回登入',
     INFO_TEXT1: 'Please ensure email address is valid as winners will be contacted primarily via email.',
     INFO_TEXT2: 'Winners will be contacted both via email and SMS if they' +
-    ' have provided mobile number in this form.',
+        ' have provided mobile number in this form.',
     ASK_PERMISSION_AFTER_SCAN: 'You win! 你贏了',
     SKIP: 'Skip 略過',
     CONTINUE: 'Continue 繼續',
@@ -21,13 +21,13 @@ export const APP_LABELS_EN = {
     QR_SCANNER_INVALID_HEADER: 'QR Scanner is not supported on IOS Chrome browser',
     QR_SCANNER_INVALID_LABEL: 'Please Enter QR Code manually OR Open App on Safari browser',
     CLOSE: 'Close'
-};
+ };
 
 export const APP_LABELS_CH = {
     FIRST_NAME: 'First Name',
     LAST_NAME: 'Last Name',
     ADDRESS: 'Address',
-    POSTCODE:'郵政編碼',
+    POSTCODE: '郵政編碼',
     EMAIL: 'Email',
     PASSWORD: 'Password',
     CONFIRM_PASSWORD: 'Confirm Password',
@@ -51,7 +51,7 @@ export const APP_LABELS_EN_CH = {
     FIRST_NAME: 'First Name 名字',
     LAST_NAME: 'Last Name 姓氏',
     ADDRESS: 'Address 住址',
-    POSTCODE:'Postal Code 郵政編碼',
+    POSTCODE: 'Postal Code 郵政編碼',
     EMAIL: 'Email 電郵',
     PASSWORD: 'Password 密碼',
     CONFIRM_PASSWORD: 'Confirm Password 確認密碼',
@@ -62,21 +62,39 @@ export const APP_LABELS_EN_CH = {
     BACK_2_LOGIN: 'Go Back to Login',
     INFO_TEXT1: 'Please ensure email address is valid as winners will be contacted primarily via email. 勝出者將會收到電郵通知，請確保電郵地址正確',
     INFO_TEXT2: 'Winners will be contacted both via email and SMS if they' +
-    ' have provided mobile number in this form. 勝出者如有填寫手機號碼，屆時將會收到電郵及短信通知得獎。',
+        ' have provided mobile number in this form. 勝出者如有填寫手機號碼，屆時將會收到電郵及短信通知得獎。',
     ASK_PERMISSION_AFTER_SCAN: 'You have a winning combination! 你已贏到糊牌組合！',
     SKIP: 'Don’t Add 不添加',
     CONTINUE: 'Add New Score 添加新分數',
     ACTION_NOT_SUPPORTED: 'Action Not Supported',
     QR_SCANNER_INVALID_HEADER: 'Error 掃描錯誤',
     QR_SCANNER_INVALID_LABEL: 'Unable to read QR code. Please try scanning again or manually enter the printed code 無法識別二維碼，請重新掃二維碼或自行輸入序號',
-    CLOSE: 'Close'
+    CLOSE: 'Close',
+    ADD_TO_HOME_STEPS_HEADER_EN: 'To add Vitasoy Mahjong Game to your home screen, please take the following steps:',
+    SAFARI_ADD_TO_HOME_STEP_1_EN: 'Tap the Share icon at the bottom of the screen (it resembles a box with an upward-pointing arrow).',
+    SAFARI_ADD_TO_HOME_STEP_2_EN: 'Tap Add to Home Screen. (Slide right and find from the bottom bar)',
+    SAFARI_ADD_TO_HOME_STEP_3_EN: 'Click Add.',
+    ADD_TO_HOME_FINAL_MSG_EN: 'Now Vitasoy Mahjong Game is available on your home screen',
+    ADD_TO_HOME_STEPS_HEADER_CH: '要將麻將遊戲添加到主屏幕，請按照以下步驟操作：',
+    SAFARI_ADD_TO_HOME_STEP_1_CH: '點擊頁面底部的共享按鈕。它看起來像一個長方形，箭頭指向頂部。',
+    SAFARI_ADD_TO_HOME_STEP_2_CH: '在顯示的選項列表中，向右滑動直到看到“添加到主屏幕”。',
+    SAFARI_ADD_TO_HOME_STEP_3_CH: '點擊添加。',
+    ADD_TO_HOME_FINAL_MSG_CH: '現在，您的主屏幕上將提供麻將遊戲的捷徑。',
+
+    CHROME_ADD_TO_HOME_STEP_1_EN: 'Tap the Share icon at the bottom of the screen (it resembles a box with an upward-pointing arrow).',
+    CHROME_ADD_TO_HOME_STEP_2_EN: 'Tap Add to Home Screen. (Slide right and find from the bottom bar)',
+    CHROME_ADD_TO_HOME_STEP_3_EN: 'Click Add.',
+    CHROME_ADD_TO_HOME_STEP_1_CH: '點擊頁面底部的共享按鈕。它看起來像一個長方形，箭頭指向頂部。',
+    CHROME_ADD_TO_HOME_STEP_2_CH: '在顯示的選項列表中，向右滑動直到看到“添加到主屏幕”。',
+    CHROME_ADD_TO_HOME_STEP_3_CH: '點擊添加。',
+    CONGRATS_ADD_TO_HOME_SUCCESS_MSG: 'Congratulation! You have earned an extra 1000 points!'
 };
 
 export enum APP_LABELS {
     FIRST_NAME = 'FIRST_NAME',
     LAST_NAME = 'LAST_NAME',
     ADDRESS = 'ADDRESS',
-    POSTCODE='POSTCODE',
+    POSTCODE = 'POSTCODE',
     EMAIL = 'EMAIL',
     PASSWORD = 'PASSWORD',
     CONFIRM_PASSWORD = 'CONFIRM_PASSWORD',
@@ -93,5 +111,24 @@ export enum APP_LABELS {
     ACTION_NOT_SUPPORTED = 'ACTION_NOT_SUPPORTED',
     QR_SCANNER_INVALID_LABEL = 'QR_SCANNER_INVALID_LABEL',
     QR_SCANNER_INVALID_HEADER = 'QR_SCANNER_INVALID_HEADER',
-    CLOSE = 'CLOSE'
+    CLOSE = 'CLOSE',
+    ADD_TO_HOME_STEPS_HEADER_EN = 'ADD_TO_HOME_STEPS_HEADER_EN',
+    SAFARI_ADD_TO_HOME_STEP_1_EN = 'SAFARI_ADD_TO_HOME_STEP_1_EN',
+    SAFARI_ADD_TO_HOME_STEP_2_EN = 'SAFARI_ADD_TO_HOME_STEP_2_EN',
+    SAFARI_ADD_TO_HOME_STEP_3_EN = 'SAFARI_ADD_TO_HOME_STEP_3_EN',
+    CHROME_ADD_TO_HOME_STEP_1_EN = 'CHROME_ADD_TO_HOME_STEP_1_EN',
+    CHROME_ADD_TO_HOME_STEP_2_EN = 'CHROME_ADD_TO_HOME_STEP_2_EN',
+    CHROME_ADD_TO_HOME_STEP_3_EN = 'CHROME_ADD_TO_HOME_STEP_3_EN',
+    ADD_TO_HOME_FINAL_MSG_EN = 'ADD_TO_HOME_FINAL_MSG_EN',
+
+    ADD_TO_HOME_STEPS_HEADER_CH = 'ADD_TO_HOME_STEPS_HEADER_CH',
+    SAFARI_ADD_TO_HOME_STEP_1_CH = 'SAFARI_ADD_TO_HOME_STEP_1_CH',
+    SAFARI_ADD_TO_HOME_STEP_2_CH = 'SAFARI_ADD_TO_HOME_STEP_2_CH',
+    SAFARI_ADD_TO_HOME_STEP_3_CH = 'SAFARI_ADD_TO_HOME_STEP_3_CH',
+    CHROME_ADD_TO_HOME_STEP_1_CH = 'CHROME_ADD_TO_HOME_STEP_1_CH',
+    CHROME_ADD_TO_HOME_STEP_2_CH = 'CHROME_ADD_TO_HOME_STEP_2_CH',
+    CHROME_ADD_TO_HOME_STEP_3_CH = 'CHROME_ADD_TO_HOME_STEP_3_CH',
+    ADD_TO_HOME_FINAL_MSG_CH = 'ADD_TO_HOME_FINAL_MSG_CH',
+
+    CONGRATS_ADD_TO_HOME_SUCCESS_MSG = 'CONGRATS_ADD_TO_HOME_SUCCESS_MSG'
 }

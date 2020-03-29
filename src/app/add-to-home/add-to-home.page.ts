@@ -7,18 +7,21 @@ import { AppService } from '../shared/app.service';
   styleUrls: ['./add-to-home.page.scss'],
 })
 export class AddToHomePage implements OnInit {
-
-  constructor(private appService: AppService) { }
+  isSafari = false;
+  constructor(public appService: AppService) { }
 
   ngOnInit() {
+    const ua = navigator.userAgent.toLowerCase();
+    if (ua.indexOf('safari') !== -1) {
+      if (ua.indexOf('chrome') > -1) {
+      } else {
+        this.isSafari = true;
+      }
+    }
   }
 
   close(): void {
     this.appService.actionAddToHomeModal.next('dismiss');
-  }
-
-  AddtoHome(): void {
-    this.appService.actionAddToHomeModal.next('addToHome');
   }
 
 }
