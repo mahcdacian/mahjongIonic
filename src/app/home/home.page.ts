@@ -99,6 +99,20 @@ export class HomePage implements OnInit {
   }
 
   showMyScore(): void {
+    //this work for safari
+    //crome there ways
+   
+   //is safari mobile
+    var isInStandaloneMode = ('standalone' in window.navigator) && (window.navigator['standalone']);
+
+   //is crome mobile
+   
+    if (isInStandaloneMode) {
+     alert("Thanks for adding app to Home ..U got 1000");
+  }else{
+    alert("to get 1000 point add this to home")
+  }
+
     this.appService.showLoader.next(true);
     this.router.navigate(['/userhistory']);
   }
@@ -116,34 +130,4 @@ export class HomePage implements OnInit {
     }
   }
 
-  deferredPrompt: any;
-  showButton = false;
-@HostListener('window:beforeinstallprompt', ['$event'])
-onbeforeinstallprompt(e) {
-  console.log(e);
-  // Prevent Chrome 67 and earlier from automatically showing the prompt
-  e.preventDefault();
-  // Stash the event so it can be triggered later.
-  this.deferredPrompt = e;
-  this.showButton = true;
-}
-addToHomeScreen() {
-  if (!this.deferredPrompt) {
-      return;
-  }
-  // hide our user interface that shows our A2HS button
-  this.showButton = false;
-  // Show the prompt
-  this.deferredPrompt.prompt();
-  // Wait for the user to respond to the prompt
-  this.deferredPrompt.userChoice
-  .then((choiceResult) => {
-  if (choiceResult.outcome === 'accepted') {
-    console.log('User accepted the A2HS prompt');
-  } else {
-    console.log('User dismissed the A2HS prompt');
-  }
-  this.deferredPrompt = null;
-});
-}
 }
