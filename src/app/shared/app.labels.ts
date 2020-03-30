@@ -59,7 +59,7 @@ export const APP_LABELS_EN_CH = {
     FORGOT_PASSWORD: 'Forgot Password? 忘記密碼?',
     ENTER__QR_CODE: 'Or Enter Code 或輸入序號',
     EMAIL_LABEL2: 'Enter your user account\'s verified email address and we will send you a password reset link 請輸入您帳戶的已驗證的電郵地址，我們將向您發送密碼重置鏈結',
-    BACK_2_LOGIN: 'Go Back to Login',
+    BACK_2_LOGIN: 'Go Back to Login 返回登錄',
     INFO_TEXT1: 'Please ensure email address is valid as winners will be contacted primarily via email. 勝出者將會收到電郵通知，請確保電郵地址正確',
     INFO_TEXT2: 'Winners will be contacted both via email and SMS if they' +
         ' have provided mobile number in this form. 勝出者如有填寫手機號碼，屆時將會收到電郵及短信通知得獎。',
@@ -67,7 +67,7 @@ export const APP_LABELS_EN_CH = {
     SKIP: 'Don’t Add 不添加',
     CONTINUE: 'Add New Score 添加新分數',
     ACTION_NOT_SUPPORTED: 'Action Not Supported',
-    QR_SCANNER_INVALID_HEADER: 'Error 掃描錯誤',
+    QR_SCANNER_INVALID_HEADER: 'Please Enter QR Code manually 請手動輸入二維碼',
     QR_SCANNER_INVALID_LABEL: 'Unable to read QR code. Please try scanning again or manually enter the printed code 無法識別二維碼，請重新掃二維碼或自行輸入序號',
     CLOSE: 'Close',
     ADD_TO_HOME_STEPS_HEADER_EN: 'To add Vitasoy Mahjong Game to your home screen, please take the following steps:',
@@ -81,13 +81,13 @@ export const APP_LABELS_EN_CH = {
     SAFARI_ADD_TO_HOME_STEP_3_CH: '點擊添加。',
     ADD_TO_HOME_FINAL_MSG_CH: '現在，您的主屏幕上將提供麻將遊戲的捷徑。',
 
-    CHROME_ADD_TO_HOME_STEP_1_EN: 'Tap the Share icon at the bottom of the screen (it resembles a box with an upward-pointing arrow).',
-    CHROME_ADD_TO_HOME_STEP_2_EN: 'Tap Add to Home Screen. (Slide right and find from the bottom bar)',
-    CHROME_ADD_TO_HOME_STEP_3_EN: 'Click Add.',
-    CHROME_ADD_TO_HOME_STEP_1_CH: '點擊頁面底部的共享按鈕。它看起來像一個長方形，箭頭指向頂部。',
-    CHROME_ADD_TO_HOME_STEP_2_CH: '在顯示的選項列表中，向右滑動直到看到“添加到主屏幕”。',
+    CHROME_ADD_TO_HOME_STEP_1_EN: 'Press the “Menu” button',
+    CHROME_ADD_TO_HOME_STEP_2_EN: 'Select the “Add to Home screen” option',
+    CHROME_ADD_TO_HOME_STEP_3_EN: 'Click Add',
+    CHROME_ADD_TO_HOME_STEP_1_CH: '按下“菜單”按鈕',
+    CHROME_ADD_TO_HOME_STEP_2_CH: '選擇“添加到主屏幕”選項',
     CHROME_ADD_TO_HOME_STEP_3_CH: '點擊添加。',
-    CONGRATS_ADD_TO_HOME_SUCCESS_MSG: 'Congratulation! You have earned an extra 1000 points!'
+    CONGRATS_ADD_TO_HOME_SUCCESS_MSG: 'Thank you for adding Vitasoy Mahjong Game to your home screen. You have successfully earned an extra 1000 points!  你已成功將維他奶麻將游戲添加到桌面。恭喜您已額外獲得了1000分！'
 };
 
 export enum APP_LABELS {

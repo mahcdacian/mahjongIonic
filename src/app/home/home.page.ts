@@ -133,24 +133,26 @@ export class HomePage implements OnInit {
   }
 
   async showAddedToHomeSuccessPrompt() {
-
+    this.appService.showLoader.next(true);
+    const alert = await this.alertController.create({
+      header: this.appService.getAppLabels('CONGRATS_ADD_TO_HOME_SUCCESS_MSG'),
+      buttons: ['OK']
+    });
     this.httpClient.get('https://us-central1-mahjong-c2571.cloudfunctions.net/userAddToHomeApi', {
       headers: new HttpHeaders().set('authorization', `Bearer ${localStorage.getItem('authToken')}`)
     }).subscribe(
       (res) => {
         if (res) {
-           
+           alert.present();
         }
+        this.appService.showLoader.next(false);
       },
       (error) => { this.appService.presentToast(error.error, 'danger'); this.appService.showLoader.next(false); }
     );
 
-    const alert = await this.alertController.create({
-      header: this.appService.getAppLabels('CONGRATS_ADD_TO_HOME_SUCCESS_MSG'),
-      buttons: ['OK']
-    });
+    
 
-    await alert.present();
+    
   }
 
   showAddToHomePrompt(): void {

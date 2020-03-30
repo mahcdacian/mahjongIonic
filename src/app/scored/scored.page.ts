@@ -64,8 +64,16 @@ export class ScoredPage implements OnInit, AfterViewInit {
   }
 
   showQRScanner(): void {
+    let camPermission = false;
+    try {
+      const hasNavigator = typeof navigator !== 'undefined';
+      const isMediaDevicesSuported = hasNavigator && !!navigator.mediaDevices;
+      if (!isMediaDevicesSuported) {
+        camPermission = true;
+      }
+    } catch (err) { }
     this.showScanner = true;
-    if (navigator.userAgent.match('CriOS')) {
+    if (camPermission) {
       this.presentNoScannerDialog();
     }
   }

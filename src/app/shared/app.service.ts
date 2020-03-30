@@ -22,7 +22,7 @@ export class AppService {
   async presentToast(msg: any, toastType: string) {
     const toast = await this.toastController.create({
       message: msg,
-      duration: 2000,
+      duration: 5000,
       color: toastType,
       keyboardClose: true,
       mode: 'ios',

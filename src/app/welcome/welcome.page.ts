@@ -43,9 +43,10 @@ export class WelcomePage implements OnInit,OnChanges {
     window.location.href = 'https://mobirise.co';
   }
   visitNow(): void {
-    window.location.href = 'https://vitasoy-na.com';
+   
+    window.location.href = 'https://vitasoy-na.com/media/';
   }
   watchNow(): void {
-    window.location.href = 'https://vitasoy-na.com/media/';
+    window.location.href = 'https://vitasoy-na.com';
   }
 }

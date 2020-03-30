@@ -6,11 +6,12 @@
     <ion-row justify-content-center align-items-center>
       <ion-col size="10">
         <div class="heading">
-          To add Vitasoy Mahjong Game to your home screen, please take the following steps:
+          Congratulations on your successful registration! !! <br><br>
+      Start drawing mahjong tiles to earn points! Add Vitasoy Mahjong Game as a shortcut to your Home Screen. You can earn an extra 1000 points!<br>
         </div>
         <div class="msg">
           <ng-container *ngIf="isSafari; else isChrome">
-            <ol>
+            <ol> 
               <li>
                 {{ appService.getAppLabels('SAFARI_ADD_TO_HOME_STEP_1_EN')}}
               </li>
@@ -49,7 +50,8 @@
     <ion-row justify-content-center align-items-center>
       <ion-col size="10">
         <div class="heading">
-          {{ appService.getAppLabels('ADD_TO_HOME_STEPS_HEADER_CH')}}
+          恭喜你已成功註冊！！<br><br>
+把維他奶麻將遊戲添加到桌面便能獲取額外1000分！
         </div>
         <div class="msg">
           <ng-container *ngIf="isSafari; else isChrome_ch">
