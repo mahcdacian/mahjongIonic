@@ -47,15 +47,30 @@
     display: inline-flex;
 }
 
+@supports (-ms-ime-align: auto) {
+    .img-align {
+        margin-left:20% !important;
+    }
+  }
 .img-align {
     text-align: end;
 }
+
+@supports (-ms-ime-align: auto) {
+    .player-info{
+        width: fill-available !important;
+        width: 100%;
+    }
+
+  }
 
 .player-info {
     box-shadow: 0px 10px 0px 0px #F7921C;
     border-radius: 3px;
     margin-bottom: 5%;
-    width: -webkit-fill-available;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    
 }
 
 .player-card {
@@ -69,9 +84,31 @@
     box-shadow: 0px 10px 0px 0px green;
     border-radius: 3px;
     margin-bottom: 5%;
-    width: -webkit-fill-available;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
 }
 
+@supports (-ms-ime-align: auto) {
+    .own-info{
+        width: fill-available !important;
+        width: 100% !important;
+    }
+  }
+
+.own-card {
+    box-shadow: 0px 10px 0px 0px green;
+    border-radius: 3px;
+    margin-bottom: 5%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+   
+}
+
+@supports (-ms-ime-align: auto) {
+    .own-card{
+        width: fill-available !important;
+    }
+  }
 .player-details {
     position: absolute;
     z-index: 10;

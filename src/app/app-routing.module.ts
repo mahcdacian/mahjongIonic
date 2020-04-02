@@ -51,10 +51,12 @@ const routes: Routes = [
   {
     path: '**',
     loadChildren: () => import('./not-found-component/not-found-component.module').then( m => m.NotFoundComponentPageModule)
+    ,canActivate: [NavigateGuard]
   },
   {
     path: 'add-to-home',
     loadChildren: () => import('./add-to-home/add-to-home.module').then( m => m.AddToHomePageModule)
+    ,canActivate: [NavigateGuard]
   },
 ];
 

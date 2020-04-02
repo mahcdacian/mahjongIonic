@@ -33,7 +33,7 @@ export class ScoreboardPage implements OnInit {
         /* tslint:enable:no-string-literal */
         this.appService.showLoader.next(false);
       },
-      (err) => { this.appService.presentToast(err, 'danger'); this.appService.showLoader.next(false); }
+      (err) => {  this.appService.showLoader.next(false); }
     );
   }
 

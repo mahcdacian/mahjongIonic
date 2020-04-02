@@ -188,6 +188,16 @@ zxing-scanner:before {
     left: 28%;
   }
 }
+
+@media screen and (min-width: 800px) {
+    
+  .video-container {
+    width: 30% !important;
+    margin-left: 35%;
+    background-color: black !important
+  }
+}
+
 .video-container {
   position: absolute;
   top: 0;

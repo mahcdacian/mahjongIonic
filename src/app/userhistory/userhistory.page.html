@@ -15,8 +15,8 @@
           <ion-row>
             <ion-col size="7"><img src="../assets/images/my_score_logo.png" style="float: left;" /></ion-col>
             <ion-col size="5" align-self-end>
-              <div class="player-info" style="">
-                <div class="player-card" style="text-align: -webkit-center;">
+              <div class="player-info" >
+                <div class="player-card" style="text-align: center;">
                   <div class="serialNo player-label" style="margin-left: -10%;" align-self-center>
                     <ng-container *ngIf="totalScore == 0; else score">
                       ...
@@ -39,16 +39,16 @@
           <div class="base-view">
             <div class="login-view">
               <div class="previous-score">
-                <ng-container *ngFor="let data of userHistory">
-                  <div padding>
+                <ng-container *ngFor="let data of userHistory" >
+                  <div padding  >
                     <ion-label class="lable-font" style="float: left;padding-top: 4px;">{{data.tileName}}</ion-label>
                     <ion-label class="lable-font" style="float: right;">
                       <label class="scoreplus">+{{data.tileScore}}</label> X <div class="scorex"> {{data.tileCount}}
                       </div>
                     </ion-label>
                   </div>
-                  <div class="card-image" padding>
-                    <ion-img style="border-bottom: 2px solid lightgrey; padding-bottom: 15px;" [src]="data.tileUrl">
+                  <div class="card-image"  padding>
+                    <ion-img [ngClass]="{ 'makefade': data.tileCount ==0 }"  style="border-bottom: 2px solid lightgrey; padding-bottom: 15px;" [src]="data.tileUrl">
                     </ion-img>
                   </div>
                 </ng-container>

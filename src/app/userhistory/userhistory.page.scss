@@ -7,7 +7,7 @@
 
 .base-view {
     border-radius: 24px;
-    box-shadow: 16px -12px 0px 4px #98C645;
+    box-shadow: 16px -12px 0px 4px #006838;
     width: 95%;
 }
 
@@ -56,7 +56,8 @@
     box-shadow: 0px 10px 0px 0px #F7921C;
     border-radius: 3px;
     margin-bottom: 5%;
-    width: -webkit-fill-available;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
     display: table;
     float: right;
     background-color: white;
@@ -64,7 +65,18 @@
     margin-right: 6%;
 }
 
-.player-card {
+@supports (-ms-ime-align: auto) {
+    .player-info{
+        width: fill-available !important;
+        width: 100% ;
+    }
+  }
+
+    .makefade{
+        opacity: 0.2;
+   }
+
+ .player-card {
     background-color: #EBE6E2;
     height: 40px;
     font-size: 20px;

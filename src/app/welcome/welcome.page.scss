@@ -1,7 +1,16 @@
   .slider {
     height: 100% !important;
-    width: -webkit-fill-available;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
   }
+
+  @supports (-ms-ime-align: auto) {
+    .slider{
+        width: fill-available !important;
+        width: 100% !important;
+    }
+  }
+
 
   .card-header {
     background-color: white;
