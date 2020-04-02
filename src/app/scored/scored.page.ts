@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AlertController } from '@ionic/angular';
 import { APP_LABELS } from '../shared/app.labels';
+import { ERROR_MESSAGE } from '../shared/message.strings';
+import { MESSAGE_TYPE } from '../shared/app.model';
 
 @Component({
   selector: 'app-scored',
@@ -134,8 +136,15 @@ export class ScoredPage implements OnInit, AfterViewInit {
           this.presentAlertConfirm();
         }
       },
-      (error) => { this.appService.presentToast(error.error, 'danger'); this.appService.showLoader.next(false); }
-    );
+      (error) => { if(error.error ==="Unauthorized"){
+        this.appService.showLoader.next(false); 
+        this.appService.presentToast(this.appService.getAppMessage(ERROR_MESSAGE.ERR_USER_NOT_LOGGED, MESSAGE_TYPE.ERROR),
+        'success');
+        this.router.navigate(['/users/login']);
+                  }else{
+       this.appService.presentToast(error.error, 'danger'); }
+                  }
+       );
   }
 
   vidEnded(): void {

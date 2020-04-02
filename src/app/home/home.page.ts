@@ -6,6 +6,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AlertController, ModalController } from '@ionic/angular';
 import { APP_LABELS } from '../shared/app.labels';
 import { AddToHomePage } from '../add-to-home/add-to-home.page';
+import { ERROR_MESSAGE } from '../shared/message.strings';
+import { MESSAGE_TYPE } from '../shared/app.model';
 
 @Component({
   selector: 'app-home',
@@ -99,7 +101,17 @@ export class HomePage implements OnInit {
         this.router.navigate(['/scored']);
         this.appService.showLoader.next(false);
       },
-      (error) => { this.appService.presentToast(error.error, 'danger'); this.appService.showLoader.next(false); }
+      (error) => { 
+        this.appService.showLoader.next(false); 
+        if(error.error ==="Unauthorized"){
+          this.appService.presentToast(this.appService.getAppMessage(ERROR_MESSAGE.ERR_USER_NOT_LOGGED, MESSAGE_TYPE.ERROR),
+          'success');
+          this.router.navigate(['/users/login']);
+                    }else{
+         this.appService.presentToast(error.error, 'danger'); 
+        }
+                    }
+                   
     );
   }
 
