@@ -159,7 +159,15 @@ export class HomePage implements OnInit {
         }
         this.appService.showLoader.next(false);
       },
-      (error) => { this.appService.presentToast(error.error, 'danger'); this.appService.showLoader.next(false); }
+      (error) => { 
+        if(error.error ==="Unauthorized"){
+          this.appService.showLoader.next(false); 
+          this.appService.presentToast(this.appService.getAppMessage(ERROR_MESSAGE.ERR_USER_NOT_LOGGED, MESSAGE_TYPE.ERROR),
+          'success');
+          this.router.navigate(['/users/login']);
+                    }else{
+         this.appService.presentToast(error.error, 'danger'); }
+           }
     );
 
     
@@ -203,7 +211,15 @@ export class HomePage implements OnInit {
             /* tslint:enable:no-string-literal */
           }
         },
-        (error) => { this.appService.presentToast(error.error, 'danger'); this.appService.showLoader.next(false); }
+        (error) => {
+          if(error.error ==="Unauthorized"){
+            this.appService.showLoader.next(false); 
+            this.appService.presentToast(this.appService.getAppMessage(ERROR_MESSAGE.ERR_USER_NOT_LOGGED, MESSAGE_TYPE.ERROR),
+            'success');
+            this.router.navigate(['/users/login']);
+                      }else{
+           this.appService.presentToast(error.error, 'danger'); }
+                  }
       );
     }
   }
