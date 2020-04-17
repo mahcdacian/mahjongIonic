@@ -57,10 +57,6 @@
                     </ion-label>
                     <ion-textarea rows="6" cols="20" class="input-field" [(ngModel)]="userDetails.address"
                       [ngModelOptions]="{standalone: true}"></ion-textarea>
-                      <p class="info-text">
-                        <ion-text color="danger">*
-                        </ion-text>{{appService.getAppLabels(appLabels.INFO_TEXT3)}}
-                      </p>
                   </div>
                   <div padding class=" form-group">
                     <ion-label class="lable-font" position="stacked">{{appService.getAppLabels(appLabels.POSTCODE)}}

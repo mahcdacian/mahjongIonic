@@ -98,10 +98,10 @@ export class RegisterPage implements OnInit {
       return false;
     }
     this.validateEmail();
-    if (!this.userDetails.address || this.userDetails.address === '') {
+    /* if (!this.userDetails.address || this.userDetails.address === '') {
         this.errorMessage = ERROR_MESSAGE.ERR_ADDRESS_REQUIRED;
         return false;
-      } 
+      }  */
     if (this.userDetails.address && this.userDetails.address.toString().length >= 151) {
       this.errorMessage = ERROR_MESSAGE.ERR_ADDRESS_LENGTH_EXCEEDS;
       return false;
