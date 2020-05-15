@@ -39,6 +39,34 @@
               </ion-slide>
               <ion-slide>
                 <div class="slider-img">
+                  <img class="new-img-prop" [src]="'../assets/images/front-page-4.jpg'" />
+                  <ion-row justify-content-center align-items-center>
+                    <ion-button expand="block" fill="clear" style="top: 75%;position: absolute; width: fit-content;"
+                      class="btn-card" (click)="media()" justify-content-center align-items-center>
+                      <div style="color: white;">
+                        <div>Watch now</div>
+                        <div style="padding-top: 10px;">立即觀看</div>
+                      </div>
+                    </ion-button>
+                  </ion-row>
+                </div>
+              </ion-slide>
+              <ion-slide>
+                <div class="slider-img">
+                  <img class="new-img-prop" [src]="'../assets/images/mahjong_mini_game_frontpage_img.png'" />
+                  <ion-row justify-content-center align-items-center>
+                    <ion-button expand="block" fill="clear" style="top: 75%;position: absolute; width: fit-content;"
+                      class="btn-card" (click)="matchit()" justify-content-center align-items-center>
+                      <div style="color: white;">
+                        <div>Play now</div>
+                        <div style="padding-top: 10px;">開始遊戲</div>
+                      </div>
+                    </ion-button>
+                  </ion-row>
+                </div>
+              </ion-slide>
+              <ion-slide>
+                <div class="slider-img">
                   <img class="new-img-prop" [src]="'../assets/images/front2.jpg'" />
                   <ion-row justify-content-center align-items-center>
                     <ion-button expand="block" fill="clear" style="top: 75%;position: absolute; width: fit-content;"
@@ -107,15 +135,15 @@
                 </ion-col>
                 <ion-col style="padding: unset;">
                   <ion-card>
-                    <img [src]="'../assets/images/front2.jpg'" />
+                    <img [src]="'../assets/images/front-page-4.jpg'" />
                     <ion-card-header class="card-header">
-                      <ion-card-title class="card-font">"Slice it" Mini game</ion-card-title>
-                      <ion-card-subtitle class="card-font">小遊戲</ion-card-subtitle>
+                      <ion-card-title class="card-font">Latest media</ion-card-title>
+                      <ion-card-subtitle class="card-font">最新影片內容</ion-card-subtitle>
                       <ion-row justify-content-center align-items-center style="text-align: center;">
-                        <ion-button expand="block" fill="clear" class="btn-card" (click)="visitNow()">
+                        <ion-button expand="block" fill="clear" class="btn-card" (click)="media()">
                           <div style="color: white;">
-                            <div>Play now</div>
-                            <div style="padding-top: 10px;">開始遊戲</div>
+                            <div>Watch now</div>
+                            <div style="padding-top: 10px;">立即觀看</div>
                           </div>
                         </ion-button>
                       </ion-row>
@@ -124,10 +152,10 @@
                 </ion-col>
                 <ion-col style="padding: unset;">
                   <ion-card>
-                    <img [src]="'../assets/images/front3.jpg'" />
+                    <img [src]="'../assets/images/mahjong_mini_game_frontpage_img.png'" />
                     <ion-card-header class="card-header">
-                      <ion-card-title class="card-font">“Truck It” Mini game</ion-card-title>
-                      <ion-card-subtitle class="card-font">小遊戲</ion-card-subtitle>
+                      <ion-card-title class="card-font">"Match it" Mini game</ion-card-title>
+                      <ion-card-subtitle class="card-font">小遊戲 </ion-card-subtitle>
                       <ion-row justify-content-center align-items-center style="text-align: center;">
                         <ion-button expand="block" fill="clear" class="btn-card" (click)="watchNow()">
                           <div style="color: white;">

@@ -49,4 +49,11 @@ export class WelcomePage implements OnInit,OnChanges {
   watchNow(): void {
     window.location.href = 'https://truckit.vitasoy80th.com/';
   }
+  matchit(): void {
+    window.location.href = 'https://matchit.vitasoy80th.com/';
+  }
+  media(): void {
+  window.location.href = 'https://vitasoy-na.com/media/';
+  }
+
 }
