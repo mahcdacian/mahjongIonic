@@ -66,3 +66,19 @@
 //   height: unset; 
 //   max-height: unset; 
 // }
+
+.grid-slider {
+  height: 500px;
+}
+
+.slider-grid-img{
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  background-size: cover;
+  height: inherit;
+}
+
+.new-img-prop-grid {
+  width: 100%;  
+}
