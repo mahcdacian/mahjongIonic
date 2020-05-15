@@ -12,7 +12,8 @@
       <ng-container *ngIf="!isLargeScreen; else gridLayout">
         <ion-row>
           <ion-col>
-            <ion-slides pager="true" [options]="slideOpts"  #slider (ionSlidesDidLoad)="slidesDidLoad(slider)" class="slider">
+            <ion-slides pager="true" [options]="slideOpts" #slider (ionSlidesDidLoad)="slidesDidLoad(slider)"
+              class="slider">
               <ion-slide>
                 <div class="slider-img">
                   <img class="new-img-prop" [src]="'../assets/images/front1_1.jpeg'" />
@@ -40,27 +41,27 @@
                 <div class="slider-img">
                   <img class="new-img-prop" [src]="'../assets/images/front2.jpg'" />
                   <ion-row justify-content-center align-items-center>
-                  <ion-button expand="block" fill="clear" style="top: 75%;position: absolute; width: fit-content;" class="btn-card"
-                    (click)="visitNow()" justify-content-center align-items-center>
-                    <div style="color: white;">
-                      <div>Play now</div>
-                      <div style="padding-top: 10px;">開始遊戲</div>
-                    </div>
-                  </ion-button>
-                </ion-row>
+                    <ion-button expand="block" fill="clear" style="top: 75%;position: absolute; width: fit-content;"
+                      class="btn-card" (click)="visitNow()" justify-content-center align-items-center>
+                      <div style="color: white;">
+                        <div>Play now</div>
+                        <div style="padding-top: 10px;">開始遊戲</div>
+                      </div>
+                    </ion-button>
+                  </ion-row>
                 </div>
               </ion-slide>
               <ion-slide>
                 <div class="slider-img">
                   <img class="new-img-prop" [src]="'../assets/images/front3.jpg'" />
                   <ion-row justify-content-center align-items-center>
-                  <ion-button expand="block" fill="clear" style="top: 75%;position: absolute; width: fit-content;" class="btn-card"
-                    (click)="watchNow()">
-                    <div style="color: white;">
-                      <div>Play now</div>
-                      <div style="padding-top: 10px;">開始遊戲</div>
-                    </div>
-                  </ion-button>
+                    <ion-button expand="block" fill="clear" style="top: 75%;position: absolute; width: fit-content;"
+                      class="btn-card" (click)="watchNow()">
+                      <div style="color: white;">
+                        <div>Play now</div>
+                        <div style="padding-top: 10px;">開始遊戲</div>
+                      </div>
+                    </ion-button>
                   </ion-row>
                 </div>
               </ion-slide>
@@ -69,69 +70,115 @@
         </ion-row>
       </ng-container>
       <ng-template #gridLayout>
-        <ion-row justify-content-center align-items-center style="margin-top: 1%; margin-bottom: 1%;">
-          <ion-col size-lg="3" size-xl="2" style="padding: unset;">
-            <ion-card>
-              <img [src]="'../assets/images/front1_1.jpeg'" routerLink="/users/register" style="cursor: pointer;" />
-              <ion-row justify-content-center align-items-center>
-                <ion-button expand="block" fill="clear" style="top: 15%;position: absolute;" class="btn-block"
-                  routerLink="/users/register">
-                  <img [src]="'../assets/images/sign_up.png'" />
-                </ion-button>
-              </ion-row>
-              <ion-row justify-content-center align-items-center>
-                <ion-button expand="block" fill="clear" style="top: 40%;position: absolute;" class="btn-block"
-                  routerLink="/users/login">
-                  <img [src]="'../assets/images/log_in.png'" />
-                </ion-button>
-              </ion-row>
-              <ion-card-header class="card-header">
-                <ion-card-title class="card-font">Mahjong Game</ion-card-title>
-                <ion-card-subtitle class="card-font">麻將遊戲                                                                                          </ion-card-subtitle>
-                <ion-row justify-content-center align-items-center style="text-align: center;">
-                <ion-button expand="block" fill="clear" class="btn-card" routerLink="/howtoplay">
-                  <div style="color: white;">
-                    <div>HOW TO PLAY</div>
-                    <div style="padding-top: 10px;">遊戲玩法</div>
-                  </div>
-                </ion-button>
+        <ion-row justify-content-center align-items-center style="margin-top: 1%; margin-bottom: 1%;height: 500px;">
+          <ion-col size-lg="8" size-xl="6" style="padding: unset;">
+            <ion-slides pager="true" [options]="slideOpts" #slider (ionSlidesDidLoad)="slidesDidLoad(slider)"
+            class="grid-slider">
+              <ion-slide>
+                <ion-col style="padding: unset;">
+                  <ion-card>
+                    <img [src]="'../assets/images/front1_1.jpeg'" routerLink="/users/register"
+                      style="cursor: pointer;" />
+                    <ion-row justify-content-center align-items-center>
+                      <ion-button expand="block" fill="clear" style="top: 15%;position: absolute;" class="btn-block"
+                        routerLink="/users/register">
+                        <img [src]="'../assets/images/sign_up.png'" />
+                      </ion-button>
+                    </ion-row>
+                    <ion-row justify-content-center align-items-center>
+                      <ion-button expand="block" fill="clear" style="top: 40%;position: absolute;" class="btn-block"
+                        routerLink="/users/login">
+                        <img [src]="'../assets/images/log_in.png'" />
+                      </ion-button>
+                    </ion-row>
+                    <ion-card-header class="card-header">
+                      <ion-card-title class="card-font">Mahjong Game</ion-card-title>
+                      <ion-card-subtitle class="card-font">麻將遊戲 </ion-card-subtitle>
+                      <ion-row justify-content-center align-items-center style="text-align: center;">
+                        <ion-button expand="block" fill="clear" class="btn-card" routerLink="/howtoplay">
+                          <div style="color: white;">
+                            <div>HOW TO PLAY</div>
+                            <div style="padding-top: 10px;">遊戲玩法</div>
+                          </div>
+                        </ion-button>
+                      </ion-row>
+                    </ion-card-header>
+                  </ion-card>
+                </ion-col>
+                <ion-col style="padding: unset;">
+                  <ion-card>
+                    <img [src]="'../assets/images/front2.jpg'" />
+                    <ion-card-header class="card-header">
+                      <ion-card-title class="card-font">"Slice it" Mini game</ion-card-title>
+                      <ion-card-subtitle class="card-font">小遊戲</ion-card-subtitle>
+                      <ion-row justify-content-center align-items-center style="text-align: center;">
+                        <ion-button expand="block" fill="clear" class="btn-card" (click)="visitNow()">
+                          <div style="color: white;">
+                            <div>Play now</div>
+                            <div style="padding-top: 10px;">開始遊戲</div>
+                          </div>
+                        </ion-button>
+                      </ion-row>
+                    </ion-card-header>
+                  </ion-card>
+                </ion-col>
+                <ion-col style="padding: unset;">
+                  <ion-card>
+                    <img [src]="'../assets/images/front3.jpg'" />
+                    <ion-card-header class="card-header">
+                      <ion-card-title class="card-font">“Truck It” Mini game</ion-card-title>
+                      <ion-card-subtitle class="card-font">小遊戲</ion-card-subtitle>
+                      <ion-row justify-content-center align-items-center style="text-align: center;">
+                        <ion-button expand="block" fill="clear" class="btn-card" (click)="watchNow()">
+                          <div style="color: white;">
+                            <div>Play now</div>
+                            <div style="padding-top: 10px;">開始遊戲</div>
+                          </div>
+                        </ion-button>
+                      </ion-row>
+                    </ion-card-header>
+                  </ion-card>
+                </ion-col>
+              </ion-slide>
+              <ion-slide>
+                <ion-row justify-content-center align-items-center>
+                  <ion-col style="padding: unset;" size="4">
+                    <ion-card>
+                      <img [src]="'../assets/images/front2.jpg'" />
+                      <ion-card-header class="card-header">
+                        <ion-card-title class="card-font">"Slice it" Mini game</ion-card-title>
+                        <ion-card-subtitle class="card-font">小遊戲</ion-card-subtitle>
+                        <ion-row justify-content-center align-items-center style="text-align: center;">
+                          <ion-button expand="block" fill="clear" class="btn-card" (click)="visitNow()">
+                            <div style="color: white;">
+                              <div>Play now</div>
+                              <div style="padding-top: 10px;">開始遊戲</div>
+                            </div>
+                          </ion-button>
+                        </ion-row>
+                      </ion-card-header>
+                    </ion-card>
+                  </ion-col>
+                  <ion-col style="padding: unset;" size="4">
+                    <ion-card>
+                      <img [src]="'../assets/images/front3.jpg'" />
+                      <ion-card-header class="card-header">
+                        <ion-card-title class="card-font">“Truck It” Mini game</ion-card-title>
+                        <ion-card-subtitle class="card-font">小遊戲</ion-card-subtitle>
+                        <ion-row justify-content-center align-items-center style="text-align: center;">
+                          <ion-button expand="block" fill="clear" class="btn-card" (click)="watchNow()">
+                            <div style="color: white;">
+                              <div>Play now</div>
+                              <div style="padding-top: 10px;">開始遊戲</div>
+                            </div>
+                          </ion-button>
+                        </ion-row>
+                      </ion-card-header>
+                    </ion-card>
+                  </ion-col>
                 </ion-row>
-              </ion-card-header>
-            </ion-card>
-          </ion-col>
-          <ion-col size-lg="3" size-xl="2" style="padding: unset;">
-            <ion-card>
-              <img [src]="'../assets/images/front2.jpg'" />
-              <ion-card-header class="card-header">
-                <ion-card-title class="card-font">"Slice it" Mini game</ion-card-title>
-                <ion-card-subtitle class="card-font">小遊戲</ion-card-subtitle>
-                <ion-row justify-content-center align-items-center style="text-align: center;">
-                <ion-button expand="block" fill="clear" class="btn-card" (click)="visitNow()">
-                  <div style="color: white;">
-                    <div>Play now</div>
-                    <div style="padding-top: 10px;">開始遊戲</div>
-                  </div>
-                </ion-button>
-              </ion-row>
-              </ion-card-header>
-            </ion-card>
-          </ion-col>
-          <ion-col size-lg="3" size-xl="2" style="padding: unset;">
-            <ion-card>
-              <img [src]="'../assets/images/front3.jpg'" />
-              <ion-card-header class="card-header">
-                <ion-card-title class="card-font">“Truck It” Mini game</ion-card-title>
-                <ion-card-subtitle class="card-font">小遊戲</ion-card-subtitle>
-                <ion-row justify-content-center align-items-center style="text-align: center;">
-                <ion-button expand="block" fill="clear" class="btn-card" (click)="watchNow()">
-                  <div style="color: white;">
-                    <div>Play now</div>
-                    <div style="padding-top: 10px;">開始遊戲</div>
-                  </div>
-                </ion-button>
-                </ion-row>
-              </ion-card-header>
-            </ion-card>
+              </ion-slide>
+            </ion-slides>
           </ion-col>
         </ion-row>
       </ng-template>
